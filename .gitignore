@@ -1,0 +1,17 @@
+/archive
+.DS_Store
+.vscode/settings.json
+__pycache__/beta_compute.cpython-312.pyc
+__pycache__/comparison_functions.cpython-314.pyc
+/catalogs/phase/ncedc
+/catalogs/phase/scedc
+/catalogs/phasenet
+/catalogs/station
+/results
+/scripts/run_nfi/archive
+/test/waveforms
+/comparison_datasets/roughness_SRTM
+comparison_datasets/focal_meca_cheng2025/stress_CA_3D_N35_5km_mu_06.pickle
+comparison_datasets/focal_meca_cheng2025/stress_CA_2D_N35_5km_mu_06.pickle
+comparison_datasets/focal_meca_cheng2025/focmec_ca_final.pickle
+/comparison_datasets/focal_mech_cheng2023
