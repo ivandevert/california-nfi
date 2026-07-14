@@ -1,13 +1,10 @@
-# %% [markdown]
-# # get_aws_waveforms.ipynb
+# get_aws_waveforms.py
 # 
-# This notebook helps download event-based waveforms from both NCEDC and SCEDC for a combined dataset. The data comes from AWS services:
+# This script downloads event-based waveforms from both NCEDC and SCEDC into
+# a combined dataset. The data comes from AWS services:
 # 
 # https://ncedc.org/db/cloud.html
-# 
 # https://scedc.caltech.edu/data/cloud.html
-# 
-# See **Parameters** section below for prerequisite catalogs.
 
 # %%
 import numpy as np
@@ -287,44 +284,45 @@ def log_error(errlog_path, event_name, context, exc):
 # %% 
 # Parameters 
 
-params = cfg['aws_downloads']
+cfg_params = cfg['get_aws_waveforms']
+cfg_paths = cfg['paths']
 
 # === USER CONFIG ===
 # Don't download events below mag_range[0]
-mag_range                   = params['mag_range']
+mag_range                   = cfg_params['mag_range']
 # Events between dates times will be downloaded if available ("YYYY-MM-DD")
-starttime                   = params['starttime']
-endtime                     = params['endtime']
+starttime                   = cfg_params['starttime']
+endtime                     = cfg_params['endtime']
 # Instruments with other sampling rates aren't typically seismometers.
 # 0.0 is kept intentionally: some stations report 0.0 due to metadata errors
 # but the underlying instrument and data appear to be fine.
-allowed_sample_rates        = params['allowed_sample_rates']
+allowed_sample_rates        = cfg_params['allowed_sample_rates']
 # Only use instruments with a vertical component
-allowed_dips                = params['allowed_dips']
+allowed_dips                = cfg_params['allowed_dips']
 # Channels with D and C prefixes aren't seismometers (?)
-disallowed_channel_prefixes = params['disallowed_channel_prefixes']
+disallowed_channel_prefixes = cfg_params['disallowed_channel_prefixes']
 # Define the time window to slice waveforms at, relative to origin time
-pre_event_time              = params['pre_event_time']
-post_event_time             = params['post_event_time']
+pre_event_time              = cfg_params['pre_event_time']
+post_event_time             = cfg_params['post_event_time']
 # Only use events within max_distance km
-max_distance                = params['max_distance'] # km
+max_distance                = cfg_params['max_distance'] # km
 # Basic data cleaning
-minimum_trace_length        = params['minimum_trace_length']
+minimum_trace_length        = cfg_params['minimum_trace_length']
 # Set to True if you want to retry failed downloads
-retry_failed_downloads      = params['retry_failed_downloads']
+retry_failed_downloads      = cfg_params['retry_failed_downloads']
 
 # ---------- Don't change anything below this line ----------
-project_dir                 = cfg['paths']['project_dir']
-catalogs_dir                = cfg['paths']['catalogs_dir']
-figure_dir                  = cfg['paths']['figure_dir']
+project_dir                 = cfg_paths['project_dir']
+catalogs_dir                = cfg_paths['catalogs_dir']
+figure_dir                  = cfg_paths['figure_dir']
 
-waveforms_dir               = cfg['paths']['waveforms_dir']
-waveforms_temp_dir          = cfg['paths']['waveforms_temp_dir']
+waveforms_dir               = cfg_paths['waveforms_dir']
+waveforms_temp_dir          = cfg_paths['waveforms_temp_dir']
 
 # This contains all earthquakes in the catalog, not necessarily ones I want
 # to use.
-eq_catalog_path             = cfg['paths']['eq_catalog_path']
-station_catalog_path        = cfg['paths']['station_catalog_path']
+eq_catalog_path             = cfg_paths['eq_catalog_filepath']
+station_catalog_path        = cfg_paths['station_catalog_filepath']
 
 err_log_path                = join(waveforms_dir, "get_aws_waveforms_error_log.txt")
 
