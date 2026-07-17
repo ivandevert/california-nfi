@@ -1,11 +1,10 @@
 # %%
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import os
 from os.path import join
 import time
-from tqdm import tqdm, trange
+from tqdm import trange
 import unlzw3
 import json
 
@@ -42,7 +41,6 @@ def parse_phase_event_line(line):
     # edep = float(line[31:34] + '.' + line[34:36])
 
     event_id = line[138:146].strip()
-    # print(event_id, edatetime)
     return event_id, edatetime
 
 
@@ -119,15 +117,6 @@ def process_ncedc_phase_file(phase_filepath, mphase_output_filepath):
             header_idx.append(l)
     header_idx.append(len(lines))  # add a final index to make for loop easier
 
-    # # Then, if it exists, open mphase_output_filepath and check for existing event IDs
-    # existing_event_ids = []
-    # if os.path.exists(mphase_output_filepath):
-    #     with open(mphase_output_filepath, 'r') as f:
-    #         existing_lines = f.readlines()
-    #     for eline in existing_lines:
-    #         if eline.startswith('#'):
-    #             existing_event_ids.append(int(eline.split()[1].strip()))
-
     D = {}
 
     # loop over each event
@@ -188,111 +177,44 @@ def get_ncedc_phase_keys(starttime, endtime):
     return keys
 
 
-def download_phase_ncedc(keys, download_dir):
+def download_phase_ncedc(keys, download_dir, status_filepath):
     s3 = boto3.resource("s3", config=Config(signature_version=UNSIGNED))
-
-    filepaths = [os.path.join(download_dir, key.split("/")[-1]) for key in keys]
     bucket = "ncedc-pds"
 
-    # for key, filepath in zip(keys, filepaths):
+    filepaths = [os.path.join(download_dir, key.split("/")[-1]) for key in keys]
+    status = np.zeros(len(keys), dtype=int)
+
+    with open(status_filepath, "a") as f:
+        f.write(f"\n=== NCEDC phase download attempt at {UTCDateTime.now()} ===\n")
+
     for i in trange(len(filepaths), desc="Downloading NCEDC phase files"):
         key = keys[i]
         filepath = filepaths[i]
-        if not os.path.exists(filepath):
-            # print("Downloading", key, "to", filepath, end='')
-            s3.Bucket(bucket).download_file(key, filepath)
-            # print("...Done.")
-    print(f"All NCEDC phase files downloaded to {download_dir}.")
+        tmp_filepath = filepath + ".tmp"
 
+        if os.path.exists(filepath):
+            status[i] = 10  # File already exists
+            continue
 
-def write_mphase(D, mphase_filepath):
-    def round_floats(obj):
-        if isinstance(obj, float):
-            return round(obj, 2)
-        if isinstance(obj, list):
-            return [round_floats(x) for x in obj]
-        if isinstance(obj, tuple):
-            return [round_floats(x) for x in obj]
-        return obj
+        try:
+            # Download to .tmp first so an interrupted transfer never
+            # leaves a truncated file that gets skipped on rerun
+            s3.Bucket(bucket).download_file(key, tmp_filepath)
+            os.rename(tmp_filepath, filepath)
+            status[i] = 1  # Downloaded successfully
+        except botocore.exceptions.ClientError as e:
+            status[i] = -1
+            with open(status_filepath, "a") as f:
+                f.write(f"Failed to download {key}: {e}\n")
+            if os.path.exists(tmp_filepath):
+                os.remove(tmp_filepath)
+            time.sleep(0.1)
 
-    D_rounded = {k: round_floats(v) for k, v in D.items()}
-
-    with open(mphase_filepath, "w") as fout:
-        json.dump(D_rounded, fout)
-
-
-def read_mphase(mphase_filepath):
-    return json.load(open(mphase_filepath, "r"))
-
-
-# %%
-cfg_paths = cfg["paths"]
-cfg_params = cfg["get_aws_phase"]
-
-catalog_dir = cfg_paths["catalogs_dir"]
-event_catalog_filepath = cfg_paths["eq_catalog_filepath"]
-
-# === Path definitions ===
-phase_dir = join(catalog_dir, "phase")
-ncedc_phase_dir = join(phase_dir, "ncedc/")
-scedc_phase_dir = join(phase_dir, "scedc/")
-ncedc_originals_dir = join(ncedc_phase_dir, "src/")
-scedc_originals_dir = join(scedc_phase_dir, "src/")
-
-scedc_status_filepath = join(phase_dir, "scedc_status.txt")
-ncedc_status_filepath = join(phase_dir, "ncedc_status.txt")
-
-starttime = UTCDateTime(cfg_params["starttime"])
-endtime = UTCDateTime(cfg_params["endtime"])
-
-mag_range = cfg_params["mag_range"]
-
-for d in [
-    phase_dir,
-    ncedc_phase_dir,
-    scedc_phase_dir,
-    ncedc_originals_dir,
-    scedc_originals_dir,
-]:
-    if not os.path.exists(d):
-        os.makedirs(d)
-
-print(f"Phase related files will be stored in the directory: {phase_dir}")
-
-# %%
-# Download all NCEDC phase to temp_download_dir
-
-keys = get_ncedc_phase_keys(starttime, endtime - 1)
-
-download_phase_ncedc(keys, ncedc_originals_dir)
-
-# convert into .mphase files
-compressed_phase_files = os.listdir(ncedc_originals_dir)
-compressed_phase_files = [el for el in compressed_phase_files if el.endswith(".Z")]
-compressed_phase_files = [el for el in compressed_phase_files if not el.startswith(".")]
-compressed_phase_files.sort()
-
-for i in trange(len(compressed_phase_files)):
-    cfile = compressed_phase_files[i]
-    phase_filepath = os.path.join(ncedc_originals_dir, cfile[:-2])
-    new_phase_filepath = os.path.join(
-        ncedc_phase_dir, ".".join(cfile.split(".")[:2]) + ".mphase"
-    )
-
-    if not os.path.exists(new_phase_filepath):
-        # uncompress
-        with open(join(ncedc_originals_dir, cfile), "rb") as f_in:
-            with open(phase_filepath, "wb") as f_out:
-                f_out.write(unlzw3.unlzw(f_in.read()))
-
-        process_ncedc_phase_file(phase_filepath, new_phase_filepath)
-
-        # delete uncompressed file
-        os.remove(phase_filepath)
-print("All NCEDC phase files processed.")
-
-
-# %%
+    print("NCEDC download status report:")
+    print(f"  {np.sum(status==1)} files downloaded.")
+    print(f"  {np.sum(status==-1)} files failed to download.")
+    print(f"  {np.sum(status==10)} files already existed.")
+    return status
 
 
 def get_scedc_phase_keys(eq_catalog):
@@ -426,6 +348,92 @@ def process_scedc_phase_files(phase_filepaths, mphase_output_filepath):
             print(f"File {phase_filepath} is empty; skipping.")
     write_mphase(D, mphase_output_filepath)
 
+def write_mphase(D, mphase_filepath):
+    def round_floats(obj):
+        if isinstance(obj, float):
+            return round(obj, 2)
+        if isinstance(obj, list):
+            return [round_floats(x) for x in obj]
+        if isinstance(obj, tuple):
+            return [round_floats(x) for x in obj]
+        return obj
+
+    D_rounded = {k: round_floats(v) for k, v in D.items()}
+
+    with open(mphase_filepath, "w") as fout:
+        json.dump(D_rounded, fout)
+
+
+def read_mphase(mphase_filepath):
+    with open(mphase_filepath, "r") as f:
+        return json.load(f)
+
+# %%
+cfg_paths = cfg["paths"]
+cfg_params = cfg["get_aws_phase"]
+
+catalog_dir = cfg_paths["catalogs_dir"]
+event_catalog_filepath = cfg_paths["eq_catalog_filepath"]
+
+# === Path definitions ===
+phase_dir = join(catalog_dir, "phase")
+ncedc_phase_dir = join(phase_dir, "ncedc/")
+scedc_phase_dir = join(phase_dir, "scedc/")
+ncedc_originals_dir = join(ncedc_phase_dir, "src/")
+scedc_originals_dir = join(scedc_phase_dir, "src/")
+
+scedc_status_filepath = join(phase_dir, "scedc_status.txt")
+ncedc_status_filepath = join(phase_dir, "ncedc_status.txt")
+
+starttime = UTCDateTime(cfg_params["starttime"])
+endtime = UTCDateTime(cfg_params["endtime"])
+
+mag_range = cfg_params["mag_range"]
+
+for d in [
+    phase_dir,
+    ncedc_phase_dir,
+    scedc_phase_dir,
+    ncedc_originals_dir,
+    scedc_originals_dir,
+]:
+    if not os.path.exists(d):
+        os.makedirs(d)
+
+print(f"Phase related files will be stored in the directory: {phase_dir}")
+
+# %%
+# Download all NCEDC phase to temp_download_dir
+
+keys = get_ncedc_phase_keys(starttime, endtime - 1)
+
+download_phase_ncedc(keys, ncedc_originals_dir)
+
+# convert into .mphase files
+compressed_phase_files = os.listdir(ncedc_originals_dir)
+compressed_phase_files = [el for el in compressed_phase_files if el.endswith(".Z")]
+compressed_phase_files = [el for el in compressed_phase_files if not el.startswith(".")]
+compressed_phase_files.sort()
+
+for i in trange(len(compressed_phase_files)):
+    cfile = compressed_phase_files[i]
+    phase_filepath = os.path.join(ncedc_originals_dir, cfile[:-2])
+    new_phase_filepath = os.path.join(
+        ncedc_phase_dir, ".".join(cfile.split(".")[:2]) + ".mphase"
+    )
+
+    if not os.path.exists(new_phase_filepath):
+        # uncompress
+        with open(join(ncedc_originals_dir, cfile), "rb") as f_in:
+            with open(phase_filepath, "wb") as f_out:
+                f_out.write(unlzw3.unlzw(f_in.read()))
+
+        process_ncedc_phase_file(phase_filepath, new_phase_filepath)
+
+        # delete uncompressed file
+        os.remove(phase_filepath)
+print("All NCEDC phase files processed.")
+
 
 # %%
 print("Reading SCEDC earthquake catalog...", end="")
@@ -495,8 +503,6 @@ eq_df["event_name"] = eq_df["source"] + eq_df["event_id"].astype(str)
 # eq_df['edatetime'] = [UTCDateTime(el) for el in eq_df['edatetime'].values]
 len0 = len(eq_df)
 print(f"Done. {len0:,} events loaded.")
-# eq_df = eq_df[eq_df['emag'] >= mag_range[0]].reset_index(drop=True)
-# print(f"{len0 - len(eq_df):,} events with magnitude < {mag_range[0]} discarded. {len(eq_df):,} events remaining.")
 
 # make a lookup dict such that eq[event_name] = emag
 eq = dict(zip(eq_df["event_name"].values, eq_df["emag"].values.astype(float)))
@@ -512,7 +518,6 @@ if not os.path.exists(combined_phase_dir):
     os.makedirs(combined_phase_dir)
 
 for year in np.arange(starttime.year, endtime.year):
-    # print(f"Combining {year} picks")
     for month in np.arange(1, 13):
         mphase_filename = f"{year}.{month:0>2}.mphase"
 
@@ -540,8 +545,6 @@ for year in np.arange(starttime.year, endtime.year):
             f"    {slen0 - len(scedc_D):,}/{slen0:,} SCEDC picks dropped, {nlen0 - len(ncedc_D):,}/{nlen0:,} NCEDC dropped"
         )
         D = {**scedc_D, **ncedc_D}
-
-        # raise ValueError()
 
         # save to combined directory
         write_mphase(D, combined_filepath)
