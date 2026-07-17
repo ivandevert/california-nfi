@@ -1,32 +1,40 @@
 # download_eq_catalogs.py
-# This is a notebook to download & combine earthquake catalogs from both
-# NCEDC and SCEDC. Need to add relocation file downloading later.
-# 
+# Download and combine earthquake catalogs from NCEDC and SCEDC, replace
+# origin locations with double-difference relocations where available, and
+# save the combined catalog as a single CSV.
+#
+# Relocated catalogs (URLs are pinned to specific versions):
+#   - SoCal:  Hauksson, Yang, and Shearer (updated through 2025)
+#             https://scedc.caltech.edu/data/alt-2011-dd-hauksson-yang-shearer.html
+#   - NorCal: Waldhauser and Schaff, NCAeqDD v202112.1 (ends Dec 2021)
+#             https://nocaldd.ldeo.columbia.edu/
+#
+# Note: no magnitude cut is applied here; the full catalog is saved and
+# filtered downstream.
+#
 # project_dir/
 # ├── catalogs/
-# │   ├── event_catalog.csv          # Full catalog (CSV format)
+# │   ├── event_catalog.csv          # Full combined catalog (CSV format)
 # │   └── event/
-# │       ├── scedc_{first_year}_{last_year}.pkl # SCEDC combined catalog
-# │       ├── ncedc_{first_year}_{last_year}.pkl # NCEDC combined catalog
-# │       ├── relocated/             # 
-# │       ├── scedc/                 # Downloaded SCEDC catalog data
-# │       └── ncedc/                 # Downloaded NCEDC catalog data
+# │       ├── relocated/             # Downloaded relocated catalogs (gzipped)
+# │       ├── scedc/                 # Downloaded SCEDC yearly catalogs
+# │       └── ncedc/                 # Downloaded NCEDC yearly catalogs
 
 
 # ### Imports
 
 # %%
-import numpy as np 
+import gzip
 import os
+import shutil
 from os.path import join
+
+import numpy as np
 import pandas as pd
-
-import json
-
-from tqdm import trange
-import urllib.request
-from shapely.geometry import Polygon
+import requests
 from shapely import contains_xy
+from shapely.geometry import Polygon
+from tqdm import trange
 
 # --- Load config --- #
 import sys
@@ -50,7 +58,26 @@ scedc_poly = Polygon([(-120.965911, 33.794442),
 
 
 # %%
+def download_file(url, dest_path, encoding=None):
+    """Download `url` to `dest_path`. If `encoding` is given, decode the
+    response with that encoding (replacing invalid characters) and write
+    text; otherwise write raw bytes."""
+    response = requests.get(url, timeout=120)
+    response.raise_for_status()
+    if encoding is None:
+        with open(dest_path, "wb") as f:
+            f.write(response.content)
+    else:
+        with open(dest_path, "w") as f:
+            f.write(response.content.decode(encoding, errors="replace"))
+
+
 def relocate_events(df_orig, df_reloc):
+    """Replace origin coordinates (elat, elon, edep) in `df_orig` with
+    relocated values from `df_reloc`, matched on event_name. Adds a
+    `relocated` column (1 = relocated, 0 = original location)."""
+    assert df_reloc['event_name'].is_unique, "Relocated catalog has non-unique event_names"
+
     # Merge on event_name (left join keeps all df_orig rows)
     merged = df_orig.merge(
         df_reloc[['event_name', 'elat', 'elon', 'edep']],
@@ -71,7 +98,7 @@ def relocate_events(df_orig, df_reloc):
     merged.drop(columns=['elat_reloc', 'elon_reloc', 'edep_reloc'], inplace=True)
 
     print(f"Relocated: {has_reloc.sum():,} / {len(df_orig):,} events ({has_reloc.mean()*100:.1f}%)")
-    
+
     return merged
 
 # %% [markdown]
@@ -82,18 +109,22 @@ cfg_paths = cfg['paths']
 cfg_params = cfg['download_eq_catalogs']
 
 catalog_output_dir = cfg_paths['catalogs_dir']
-partial_output_dir = join(catalog_output_dir, "event/")
+partial_output_dir = join(catalog_output_dir, "event")
 
+# Year range of yearly catalogs to download. starttime is inclusive and
+# endtime is exclusive, so the last catalog year is that of (endtime - 1 day)
 first_year = int(cfg_params['starttime'].split('-')[0])
-last_year = int(cfg_params['endtime'].split('-')[0] - 1) # inclusive
+last_year = (pd.to_datetime(cfg_params['endtime']) - pd.Timedelta(days=1)).year
+
+print(f"Downloading catalogs from {first_year} to {last_year} (inclusive)")
 
 # Full catalog output path
 full_catalog_path_csv = cfg_paths['eq_catalog_filepath']
 
-# Relocated events output path
-relocated_dir = join(partial_output_dir, "relocated/")
-
-# eq_json_path = join(partial_output_dir, 'event_catalog.json')
+# Directories for downloaded source catalogs
+relocated_dir = join(partial_output_dir, "relocated")
+scedc_dir = join(partial_output_dir, "scedc")
+ncedc_dir = join(partial_output_dir, "ncedc")
 
 # Prefixes for event names, such that event_name = event_name_prefix + event_id
 # e.g. s12345678 is event ID 12345678 from the SCEDC catalog
@@ -101,29 +132,51 @@ SCEDC_event_name_prefix = 's'
 NCEDC_event_name_prefix = 'n'
 
 combine_columns = ['event_id', 'edatetime', 'emag', 'emagtype', 'elat', 'elon', 'edep', 'nst', 'etype']
-output_columns = ['event_name', 'edatetime', 'emag', 'emagtype', 'elat', 'elon', 'edep', 'nst', 'etype', 'relocated']
+output_columns = ['event_name', 'edatetime', 'emag', 'emagtype', 'elat', 'elon', 'edep', 'nst', 'etype', 'wrong_network', 'relocated']
 
-os.makedirs(catalog_output_dir, exist_ok=True)
-
+for d in [catalog_output_dir, partial_output_dir, relocated_dir, scedc_dir, ncedc_dir]:
+    os.makedirs(d, exist_ok=True)
 
 # %% [markdown]
 # ## Load and prepare relocated catalogs
 
 # %%
+# ===================== SoCal relocated catalog =====================
 # https://scedc.caltech.edu/data/alt-2011-dd-hauksson-yang-shearer.html
+socal_reloc_url = "https://scedc.caltech.edu/ftp/catalogs/hauksson/Socal_DD/sc_1981_2025_1d_3d_gc_soda_noqb_10_1_SCSN.gc"
 reloc_cols = ["event_name", "edatetime", "elat", "elon", "edep"]
 
 
 # File format:
-# 
+#
 # 012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 # 1981 01 01 17 45 59.096   3301578  33.50471 -116.76482   6.020  1.50    7832      19     836   105  1151   656  0.25  0.20   0.109   0.343   0.019    33.50487 -116.76460   6.065 le h gc 58
-# 1981 01 01 18 57 18.260  12249959  33.54833 -117.76867  12.600  1.85      10                                        59.600   1.200   6.400   0.170                                le   3d   
+# 1981 01 01 18 57 18.260  12249959  33.54833 -117.76867  12.600  1.85      10                                        59.600   1.200   6.400   0.170                                le   3d
 
 
-
-# ===================== SoCal relocated catalog =====================
 socal_catalog_filepath = join(relocated_dir, "hauksson_relocated_eq.gc")
+socal_catalog_zfilepath = join(relocated_dir, "hauksson_relocated_eq.gc.gz")
+
+# Download the catalog if needed. Only a gzipped copy is kept on disk to save
+# space; the uncompressed file is deleted after reading.
+if not os.path.exists(socal_catalog_zfilepath):
+    print("Downloading Hauksson et al. (SoCal) relocated catalog...")
+    print(f"URL: {socal_reloc_url}")
+    download_file(socal_reloc_url, socal_catalog_filepath)
+    print(f"Downloaded to {socal_catalog_filepath}")
+
+    print("Compressing catalog...")
+    with open(socal_catalog_filepath, "rb") as f_in:
+        with gzip.open(socal_catalog_zfilepath, "wb") as f_out:
+            shutil.copyfileobj(f_in, f_out)
+    print(f"Compressed to {socal_catalog_zfilepath}")
+else:
+    print("Uncompressing SoCal relocated catalog...")
+    with gzip.open(socal_catalog_zfilepath, "rb") as f_in:
+        with open(socal_catalog_filepath, "wb") as f_out:
+            shutil.copyfileobj(f_in, f_out)
+    print(f"Uncompressed to {socal_catalog_filepath}")
+
 
 socal_columns = [
     'year', 'month', 'day', 'hour', 'minute', 'second',
@@ -172,15 +225,22 @@ socal_colspecs = [
 assert len(socal_columns) == len(socal_colspecs), "Column/colspec length mismatch (SoCal)"
 
 df_socal = pd.read_fwf(socal_catalog_filepath, colspecs=socal_colspecs, names=socal_columns)
-df_socal = df_socal[df_socal['year'] >= 1995]
+
+# Remove the uncompressed file; the gzipped copy is kept
+os.remove(socal_catalog_filepath)
+
+df_socal = df_socal[df_socal['year'] >= first_year]
 df_socal['event_name'] = 's' + df_socal['event_id'].astype(str)
+# Note: pd.to_datetime rolls seconds >= 60 over into the next minute
 df_socal['edatetime'] = pd.to_datetime(df_socal[['year', 'month', 'day', 'hour', 'minute', 'second']])
 df_socal = df_socal[reloc_cols].reset_index(drop=True)
-print("Socal catalog head:")
+print("SoCal relocated catalog head:")
 print(df_socal.head(10), "\n")
 
 # ===================== NorCal relocated catalog ====================
+norcal_catalog_url = "https://nocaldd.ldeo.columbia.edu/catalog/NCAeqDD.v202112.1.gz"
 norcal_catalog_filepath = join(relocated_dir, "NCAeqDD.v202112.1")
+norcal_catalog_zfilepath = join(relocated_dir, "NCAeqDD.v202112.1.gz")
 
 norcal_columns = [
     'year', 'month', 'day', 'hour', 'minute', 'second',
@@ -207,207 +267,187 @@ norcal_colspecs = [
 ]
 assert len(norcal_columns) == len(norcal_colspecs), "Column/colspec length mismatch (NorCal)"
 
+# Download the catalog if needed (already gzipped at the source)
+if not os.path.exists(norcal_catalog_zfilepath):
+    print("Downloading Waldhauser and Schaff (NorCal) relocated catalog...")
+    print(f"URL: {norcal_catalog_url}")
+    download_file(norcal_catalog_url, norcal_catalog_zfilepath)
+    print(f"Downloaded to {norcal_catalog_zfilepath}")
+
+print("Uncompressing NorCal relocated catalog...")
+with gzip.open(norcal_catalog_zfilepath, "rb") as f_in:
+    with open(norcal_catalog_filepath, "wb") as f_out:
+        shutil.copyfileobj(f_in, f_out)
+print(f"Uncompressed to {norcal_catalog_filepath}")
+
+# The file starts with a 97-line header
 df_norcal = pd.read_fwf(
     norcal_catalog_filepath, colspecs=norcal_colspecs, names=norcal_columns, skiprows=97
 )
-df_norcal = df_norcal[df_norcal['year'] >= 1995]
+# Remove the uncompressed file; the gzipped copy is kept
+os.remove(norcal_catalog_filepath)
+
+df_norcal = df_norcal[df_norcal['year'] >= first_year]
 df_norcal['event_name'] = 'n' + df_norcal['event_id'].astype(str)
 df_norcal['edatetime'] = pd.to_datetime(df_norcal[['year', 'month', 'day', 'hour', 'minute', 'second']])
 df_norcal = df_norcal[reloc_cols].reset_index(drop=True)
-print("NorCal catalog head:")
+print("NorCal relocated catalog head:")
 print(df_norcal.head(10), "\n")
 
-# ===================== Combine and save ============================
+# ===================== Combine relocated catalogs ==================
 df_relocated = (
     pd.concat([df_socal, df_norcal], axis=0)
     .sort_values(by='edatetime')
     .reset_index(drop=True)
 )
 
-print("Combined catalog head:")
+print("Combined relocated catalog head:")
 print(df_relocated.head(10), "\n")
 
 
 # %% [markdown]
-# ## Download and prepare NCEDC and SCEDC catalogs
+# ## Download and prepare SCEDC and NCEDC catalogs
 
 # %%
-### Download SCEDC full catalogs #######################################
+# ===================== SCEDC full catalog ==========================
+# info:   https://github.com/SCEDC/SCEDC-catalogs
+# format: https://scedc.caltech.edu/eq-catalogs/docs/scec_dc.html
 
-os.makedirs(catalog_output_dir, exist_ok=True)
-os.makedirs(partial_output_dir, exist_ok=True)
+years = np.arange(first_year, last_year + 1, 1).astype(str)
 
-years = np.arange(first_year, last_year+1, 1).astype(str)
-
-# info https://github.com/SCEDC/SCEDC-catalogs
-# format https://scedc.caltech.edu/eq-catalogs/docs/scec_dc.html
-
-scedc_column_names = ['eymd', 'ehms', 'etype', 'egtype', 'emag', 'emagtype', 'elat', 
+scedc_column_names = ['eymd', 'ehms', 'etype', 'egtype', 'emag', 'emagtype', 'elat',
                 'elon', 'edep', 'equal', 'event_id', 'nphase', 'nst']
-scedc_urls = ["https://service.scedc.caltech.edu/ftp/catalogs/SCEC_DC/" + el + ".catalog" for el in years]
-file_names = [partial_output_dir + 'scedc/' + year + '.catalog' for year in years]
-scedc_catalog_filename = f"scedc_{first_year}_{last_year}.pkl"
-scedc_catalog_filepath = os.path.join(partial_output_dir, scedc_catalog_filename)
+scedc_urls = ["https://service.scedc.caltech.edu/ftp/catalogs/SCEC_DC/" + year + ".catalog" for year in years]
+scedc_file_paths = [join(scedc_dir, year + '.catalog') for year in years]
 
-os.makedirs(partial_output_dir + 'scedc/', exist_ok=True)
-
-if not os.path.exists(scedc_catalog_filepath):
-    if not all([os.path.exists(file_name) for file_name in file_names]):
-        for i in trange(len(scedc_urls), desc='Downloading SCEDC catalogs: '):
-            if not os.path.exists(file_names[i]):
-                # Download the file from `url` and save it locally under `file_name`:
-                with urllib.request.urlopen(scedc_urls[i]) as response, open(file_names[i], 'w') as out_file:
-                    text = response.read().decode('utf-8')
-                    out_file.write(text)
-            else:
-                print(f"SCEDC catalog {file_names[i]} already downloaded")
-    else:
-        print("SCEDC catalogs already downloaded to " + partial_output_dir + "scedc/")
-
-    # load all year catalogs into one dataframe
-    scedc_df = pd.DataFrame()
-    df = [[]] * len(years)
-    for i, year in enumerate(years):
-        # header for scedc catalogs is 10 lines
-        df[i] = pd.read_csv(file_names[i], skiprows=10, sep=r'\s+', 
-                        names=scedc_column_names, skipfooter=1, engine='python')
-    scedc_df = pd.concat(df, axis=0).reset_index(drop=True)
-    assert len(scedc_df) == sum([len(el) for el in df])
-
-    # write full catalog .pkl file
-    scedc_df.to_pickle(scedc_catalog_filepath)
+if not all([os.path.exists(fp) for fp in scedc_file_paths]):
+    for i in trange(len(scedc_urls), desc='Downloading SCEDC catalogs: '):
+        if not os.path.exists(scedc_file_paths[i]):
+            download_file(scedc_urls[i], scedc_file_paths[i], encoding='utf-8')
 else:
-    print(f"Reading SCEDC catalog {scedc_catalog_filepath}")
-    scedc_df = pd.read_pickle(scedc_catalog_filepath)
+    print(f"SCEDC catalogs already downloaded to {scedc_dir}")
 
-scedc_df_out = scedc_df.copy()
+# Load all yearly catalogs into one dataframe. Each file has a 10-line header
+# and a 1-line footer.
+scedc_yearly_dfs = [
+    pd.read_csv(fp, skiprows=10, sep=r'\s+',
+                names=scedc_column_names, skipfooter=1, engine='python')
+    for fp in scedc_file_paths
+]
+scedc_df = pd.concat(scedc_yearly_dfs, axis=0).reset_index(drop=True)
+assert len(scedc_df) == sum([len(el) for el in scedc_yearly_dfs])
 
-# correct the formats of certain columns
-# edatetime column
-scedc_df_out['eymd'] = scedc_df_out['eymd'].apply(lambda x: x.replace('/', '-'))
-# replace '60.00' with '59.999' in ehms column - for some reason, some 
-# events have seconds = 60.0. Replace these with 59.999
-scedc_df_out['ehms'] = scedc_df_out['ehms'].apply(lambda x: x.replace('60.00', '59.999'))
-bad_idx = np.where(np.array([float(el.split(":")[-1]) for el in scedc_df_out['ehms'].values]) > 60.0)[0]
+# Correct the formats of certain columns:
+# eymd column: use '-' date separators so pd.to_datetime can parse it
+scedc_df['eymd'] = scedc_df['eymd'].apply(lambda x: x.replace('/', '-'))
+# ehms column: for some reason, some events have seconds = 60.0. Replace
+# these with 59.999
+scedc_df['ehms'] = scedc_df['ehms'].apply(lambda x: x.replace('60.00', '59.999'))
 
-# these entries are real wonky. idek, but get rid of them
+# Entries with seconds > 60 are real wonky. idek, but get rid of them
+bad_seconds = np.array([float(el.split(":")[-1]) for el in scedc_df['ehms'].values]) > 60.0
 print("The following entries will be deleted because their seconds are greater than 60:")
-if len(bad_idx) == 0:
+if bad_seconds.sum() == 0:
     print("None.")
 else:
-    print(scedc_df_out.iloc[bad_idx])
-scedc_df_out = scedc_df_out.drop(bad_idx, axis=0).reset_index(drop=True)
+    print(scedc_df[bad_seconds])
+scedc_df = scedc_df[~bad_seconds].reset_index(drop=True)
 
-# properly format edatetime and get rid of other columns
-scedc_df_out['edatetime'] = pd.to_datetime(scedc_df_out['eymd'] + 'T' + scedc_df_out['ehms'])
-scedc_df_out = scedc_df_out.drop(['eymd', 'ehms'], axis=1)
-scedc_df_out = scedc_df_out[combine_columns]
+# Properly format edatetime and keep only the columns used downstream
+scedc_df['edatetime'] = pd.to_datetime(scedc_df['eymd'] + 'T' + scedc_df['ehms'])
+scedc_df = scedc_df.drop(['eymd', 'ehms'], axis=1)
+scedc_df = scedc_df[combine_columns]
 
-# make sure event IDs are unique
-assert len(scedc_df_out['event_id'].unique()) == len(scedc_df_out)
+# Make sure event IDs are unique
+assert scedc_df['event_id'].is_unique
 
-# add source column. event_name can be formed with source + event_id
-scedc_df_out['source'] = SCEDC_event_name_prefix
+# Add source column. event_name can be formed with source + event_id
+scedc_df['source'] = SCEDC_event_name_prefix
 
-# print out some statistics
-print(f"Total number of SCEDC events: {len(scedc_df_out):,}")
+print(f"Total number of SCEDC events: {len(scedc_df):,}")
 
-#####################################################
 
-### Download NCEDC full catalogs #######################################
-# info https://github.com/NCEDC/NCSS-catalogs
+# ===================== NCEDC full catalog ==========================
+# info: https://github.com/NCEDC/NCSS-catalogs
 
 ncedc_column_names = ['edatetime', 'elat', 'elon', 'edep', 'emag', 'emagtype',
                 'nst', 'gap', 'dmin', 'rms', 'net', 'event_id', 'updated',
-                'place', 'etype', 'horiz_error', 'depth_error', 'mag_error', 
+                'place', 'etype', 'horiz_error', 'depth_error', 'mag_error',
                 'mag_nst', 'status', 'location_source', 'mag_source']
-ncedc_urls = ["https://ncedc.org/pub/catalogs/NCSS-catalogs/" + el + ".ehpcsv" for el in years]
-file_names = [partial_output_dir + 'ncedc/' + year + '.catalog' for year in years]
-ncedc_catalog_filename = f"ncedc_{first_year}_{last_year}.pkl"
-ncedc_catalog_filepath = os.path.join(partial_output_dir, ncedc_catalog_filename)
+ncedc_urls = ["https://ncedc.org/pub/catalogs/NCSS-catalogs/" + year + ".ehpcsv" for year in years]
+ncedc_file_paths = [join(ncedc_dir, year + '.catalog') for year in years]
 
-os.makedirs(partial_output_dir + 'ncedc/', exist_ok=True)
-if not os.path.exists(ncedc_catalog_filepath):
-    if not all([os.path.exists(file_name) for file_name in file_names]):
-        for i in trange(len(ncedc_urls), desc='Downloading NCEDC catalogs: '):
-            if not os.path.exists(file_names[i]):
-                # Download the file from `url` and save it locally under `file_name`:
-                with urllib.request.urlopen(ncedc_urls[i]) as response, open(file_names[i], 'w') as out_file:
-                    text = response.read().decode('ascii', errors='replace')
-                    out_file.write(text)
-                    # weird issue with 2024, downloaded manually
-            else:
-                print(f"NCEDC catalog {file_names[i]} already downloaded.")
-    else:
-        print("NCEDC catalogs already downloaded to " + partial_output_dir + "ncedc/")
-
-    # load all catalogs into one dataframe
-    ncedc_df = pd.DataFrame()
-    df = [[]] * len(years)
-    for i, year in enumerate(years):
-        df[i] = pd.read_csv(file_names[i], skiprows=1, sep=',', 
-                            names=ncedc_column_names,)
-    ncedc_df = pd.concat(df, axis=0).reset_index(drop=True)
-    assert len(ncedc_df) == sum([len(el) for el in df])
-
-    # write full catalog .pkl file
-    ncedc_df.to_pickle(ncedc_catalog_filepath)
+if not all([os.path.exists(fp) for fp in ncedc_file_paths]):
+    for i in trange(len(ncedc_urls), desc='Downloading NCEDC catalogs: '):
+        if not os.path.exists(ncedc_file_paths[i]):
+            download_file(ncedc_urls[i], ncedc_file_paths[i], encoding='ascii')
 else:
-    print(f"Reading NCEDC catalog {ncedc_catalog_filepath}")
-    ncedc_df = pd.read_pickle(ncedc_catalog_filepath)
+    print(f"NCEDC catalogs already downloaded to {ncedc_dir}")
 
-ncedc_df_out = ncedc_df.copy()
-ncedc_df_out['edatetime'] = pd.to_datetime(ncedc_df['edatetime']).dt.tz_localize(None)
-ncedc_df_out = ncedc_df_out[combine_columns]
+# Load all yearly catalogs into one dataframe. Each file has a 1-line header.
+ncedc_yearly_dfs = [
+    pd.read_csv(fp, skiprows=1, sep=',', names=ncedc_column_names)
+    for fp in ncedc_file_paths
+]
+ncedc_df = pd.concat(ncedc_yearly_dfs, axis=0).reset_index(drop=True)
+assert len(ncedc_df) == sum([len(el) for el in ncedc_yearly_dfs])
 
-# filter out earthquakes without a location or magnitude
-len0 = len(ncedc_df_out)
-ncedc_df_out = ncedc_df_out[np.logical_and(ncedc_df_out['emagtype']!='Unk', ncedc_df_out['elon']!=0.0)].reset_index(drop=True)
-print(f"{len0 - len(ncedc_df_out):,} events have no location or magnitude and are discarded")
-ncedc_df_out['source'] = NCEDC_event_name_prefix
+ncedc_df['edatetime'] = pd.to_datetime(ncedc_df['edatetime']).dt.tz_localize(None)
+ncedc_df = ncedc_df[combine_columns]
 
-print(f"Total number of NCEDC events: {len(ncedc_df_out):,}")
+# Filter out earthquakes without a location or magnitude
+len0 = len(ncedc_df)
+ncedc_df = ncedc_df[np.logical_and(ncedc_df['emagtype'] != 'Unk', ncedc_df['elon'] != 0.0)].reset_index(drop=True)
+print(f"{len0 - len(ncedc_df):,} events have no location or magnitude and are discarded")
 
-### combine catalogs
-eq_df = pd.concat([scedc_df_out, ncedc_df_out], axis=0).reset_index(drop=True)
+# Make sure event IDs are unique
+assert ncedc_df['event_id'].is_unique
+
+# Add source column. event_name can be formed with source + event_id
+ncedc_df['source'] = NCEDC_event_name_prefix
+
+print(f"Total number of NCEDC events: {len(ncedc_df):,}")
+
+# ===================== Combine, relocate, and save =================
+eq_df = pd.concat([scedc_df, ncedc_df], axis=0).reset_index(drop=True)
 eq_df['event_name'] = eq_df['source'] + eq_df['event_id'].astype(str)
 
-# Relocate events
+# Replace origin locations with relocated locations where available
 eq_df = relocate_events(eq_df, df_relocated)
 
 eq_df = eq_df.sort_values(by='edatetime').reset_index(drop=True)
 
-len0 = len(eq_df)
-
-# remove SCEDC events outside polygon, and NCEDC events inside polygon
+# Mark events outside their network's authoritative region as 'wrong_network':
+# NCEDC events inside the SCEDC polygon, and SCEDC events outside it
 inside = contains_xy(scedc_poly, eq_df['elon'].to_numpy(), eq_df['elat'].to_numpy())
 source = eq_df['source'].to_numpy()
 
-drop_n = inside & (source == NCEDC_event_name_prefix) # NCEDC events inside polygon
-drop_s = ~inside & (source == SCEDC_event_name_prefix) # SCEDC events outside polygon
-drop_mask = drop_n | drop_s
+wrong_net_ncedc = inside & (source == NCEDC_event_name_prefix)   # NCEDC events inside polygon
+wrong_net_scedc = ~inside & (source == SCEDC_event_name_prefix)  # SCEDC events outside polygon
 
-eq_df = eq_df.loc[~drop_mask].reset_index(drop=True)
-
-print(f"Total number of events: {len(eq_df):,}")
+eq_df['wrong_network'] = (wrong_net_ncedc | wrong_net_scedc).astype('int8')
 
 eq_df[output_columns].to_csv(full_catalog_path_csv, index=False)
+print(f"Saved full catalog to {full_catalog_path_csv}")
+
+# ===================== Final report ================================
+# Note: the NorCal relocated catalog (v202112.1) ends in Dec 2021, so NCEDC
+# events after that date cannot be relocated
+n_ncedc = (eq_df['source'] == NCEDC_event_name_prefix).sum()
+n_scedc = (eq_df['source'] == SCEDC_event_name_prefix).sum()
 
 print("")
 print("------ Final report ------")
 print(f"Total number of events: {len(eq_df):,}")
-print(f"Total NCEDC events: {len(eq_df[eq_df['source'] == NCEDC_event_name_prefix]):,}")
-print(f"Total SCEDC events: {len(eq_df[eq_df['source'] == SCEDC_event_name_prefix]):,}")
-print(f"Total dropped NCEDC events inside polygon: {drop_n.sum():,} ({drop_n.sum() / len(eq_df) * 100:.2f}%)")
-print(f"Total dropped SCEDC events outside polygon: {drop_s.sum():,} ({drop_s.sum() / len(eq_df) * 100:.2f}%)")
-print(f"Total number of relocated events: {sum(eq_df['relocated']):,}")
+print(f"Total NCEDC events: {n_ncedc:,}")
+print(f"Total SCEDC events: {n_scedc:,}")
+print(f"NCEDC events inside polygon: {wrong_net_ncedc.sum():,} ({wrong_net_ncedc.sum() / n_ncedc * 100:.2f}% of NCEDC events)")
+print(f"SCEDC events outside polygon: {wrong_net_scedc.sum():,} ({wrong_net_scedc.sum() / n_scedc * 100:.2f}% of SCEDC events)")
+print(f"Total number of relocated events: {eq_df['relocated'].sum():,}")
 
 print("\n ------------------------------------------- \n")
-df = eq_df[eq_df['emag']>=1.0].reset_index(drop=True)
-print(f"M>=1 number of events: {len(df):,}")
-print(f"M>=1 NCEDC events: {len(df[df['source'] == NCEDC_event_name_prefix]):,}")
-print(f"M>=1 SCEDC events: {len(df[df['source'] == SCEDC_event_name_prefix]):,}")
-print(f"M>=1 number of relocated events: {sum(df['relocated']):,} ({sum(df['relocated'])/len(df)*100:.2f}%)")
-
-
-
+eq_df_m1 = eq_df[eq_df['emag'] >= 1.0].reset_index(drop=True)
+print(f"M>=1 number of events: {len(eq_df_m1):,}")
+print(f"M>=1 NCEDC events: {(eq_df_m1['source'] == NCEDC_event_name_prefix).sum():,}")
+print(f"M>=1 SCEDC events: {(eq_df_m1['source'] == SCEDC_event_name_prefix).sum():,}")
+print(f"M>=1 number of relocated events: {eq_df_m1['relocated'].sum():,} ({eq_df_m1['relocated'].sum() / len(eq_df_m1) * 100:.2f}%)")
