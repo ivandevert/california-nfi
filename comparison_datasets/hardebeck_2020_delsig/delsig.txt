@@ -1,0 +1,28 @@
+Earthquake name,Year,Type,Mo,L,w,delsig,id
+Long Beach,1933,ss,4.1,23,13,6.7,3359741
+Imperial,1940,ss,27,60,11,24,3365279
+Desert Hot Springs,1948,ss,1,15,16,1.7,9860350
+Kern County,1952,ob,130,64,19,42,3319401
+Anza Borrego,1954,ss,2.89,15,12,8.5,3299653
+Borrego,1968,ss,10,40,10,16,3329122
+Coyote Mountain,1969,ob,0.38,10,3,32,3327613
+San Fernando,1971,ob,10.4,17,14,23,3347678
+Point Mugu,1973,ds,0.42,8,3.3,41,3320341
+Horse Canyon,1975,ss,0.035,2,2,28,3023147
+Santa Barbara,1978,ob,0.75,10,5,22,10012262
+Homestead Valley,1979,ss,0.24,6,4,16,3346646
+Imperial,1979,ss,7.12,51,12,6.2,3352060
+Anza,1980,ss,0.041,2.5,2.5,17,3326333
+Anza,1982,ss,0.017,2.5,3,4.8,532392
+North Palm Springs,1986,ob,1.73,16,9,10,700917
+Oceanside,1986,ds,0.73,8,7,16,127298
+Whittier Narrows,1987,ds,1.04,5,6,50,731691
+Elmore Ranch,1987,ss,2.6,30,12,3.8,134894
+Superstition Hills,1987,ss,9.2,30,11,16,628016
+Pasadena,1988,ss,0.031,4.5,2.5,7,650799
+Upland,1990,ss,0.27,4,7,8.8,1053635
+Sierra Madre,1991,ob,0.3,4,5,22,2021449
+Joshua Tree,1992,ss,2.9,15,13,7.3,3019681
+Landers,1992,ss,114,71,12,71,3031111
+Big Bear,1992,ss,11.6,20,10,37,3031425
+Hector Mine,1999,ss,6.5,50,12,5.7,9108652

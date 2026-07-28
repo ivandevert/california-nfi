@@ -1,0 +1,30 @@
+% -------------------------  FINITE-SOURCE SLIP MODEL  ---------------------------
+%
+% Evnt : Hector Mine (Calif.)   10/16/1999   [Ji etal(2002)]
+% EventTAG: s1999HECTORjiet   
+%
+% Loc  : LAT  =  34.597      LON = -116.270     DEP = 15.00
+% Size : LEN  =  54.00 km    WID =  16.00 km    Mw = 7.17       Mo = 6.35e+019 Nm
+% Mech : STRK =  335         DIP =  80          RAKE = 175      Htop = 0.01 km
+% Rupt : HypX =  37.50 km    HypZ = 14.80 km    avTr = 3.5 s    avVr = 1.9 km/s
+% Invs : inDx =   3.00 km    inDz =  2.66 km    Fmin = 0.02 Hz  Fmax = 1.0 Hz
+% Invs : Nx =   6            Nz  =  18 
+%
+% Number of segments: Nsg =  3
+% NOTE : The rupture model given below represents a single-fault-plane projection
+%        of a geometrically complex fault with multiple segments!
+%
+% Check corresponding file -- s1999HECTORjiet.fsp -- for details & exact geometry
+%
+% rows : source-parameter values in along-strike direction (row 1 == top) 
+% cols : source-parameter values in down-dip direction
+%
+% 22-Aug-2007, collected by P.Martin Mai (mai@sed.ethz.ch)
+% --------------------------------------------------------------------------------
+% -----------------------------   TOTAL SLIP [m]   -------------------------------
+   0.50   0.50   0.50   0.95   1.00   2.00   2.00   3.50   2.80   3.00   3.06   3.50   5.00   4.45   2.18   2.96   2.00   0.50
+   0.50   1.58   1.60   1.80   2.60   4.20   5.00   5.40   5.25   6.73   6.80   5.11   8.00   8.20   5.00   5.60   2.75   2.00
+   0.25   0.68   0.80   1.00   1.80   3.40   3.80   4.00   4.35   6.00   7.00   5.91   6.80   8.00   6.60   6.00   3.26   1.70
+   0.00   0.00   0.00   0.00   0.80   1.20   1.60   1.00   2.00   3.60   4.60   3.80   2.31   4.20   6.00   5.80   4.00   1.30
+   0.00   0.00   0.00   0.00   0.00   0.16   0.00   0.00   0.30   0.90   1.50   1.20   0.75   1.50   3.45   3.75   2.63   1.30
+   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.20   0.00   0.80   1.20   1.20   1.00

@@ -1,0 +1,6353 @@
+/3.2
+(ODB.1
+	FirstRootClassName:	"SymList"
+	Roots:	2
+	Version:	32
+)
+
+(SymList.2
+	Child:	3
+	Child:	4
+	Child:	5
+	Child:	6
+	Child:	7
+	Child:	8
+	Child:	9
+	Child:	10
+	Child:	11
+	Child:	12
+	Child:	13
+	Child:	14
+	Child:	15
+	Child:	16
+	Child:	17
+	Child:	18
+	Child:	19
+	Child:	20
+	Child:	21
+	Child:	22
+	Child:	23
+	Child:	24
+	Child:	25
+	Child:	26
+	Child:	27
+	Child:	28
+	Child:	29
+	Child:	30
+	Child:	31
+	Child:	32
+	Child:	33
+	Child:	34
+	Child:	35
+	Child:	36
+	Child:	37
+	Child:	38
+	Child:	39
+	Child:	40
+	Child:	41
+	Child:	42
+	Child:	43
+	Child:	44
+	Child:	45
+	Child:	46
+	Child:	47
+	Child:	48
+	Child:	49
+	Child:	50
+	Child:	51
+	Child:	52
+	Child:	53
+	Child:	54
+	Child:	55
+	Child:	56
+	Child:	57
+	Child:	58
+	Child:	59
+	Child:	60
+	Child:	61
+	Child:	62
+	Child:	63
+	Child:	64
+	Child:	65
+	Child:	66
+	Child:	67
+	Child:	68
+	Child:	69
+	Child:	70
+	Child:	71
+	Child:	72
+	Child:	73
+	Child:	74
+	Child:	75
+	Child:	76
+	Child:	77
+	Child:	78
+	Child:	79
+	Child:	80
+	Child:	81
+	Child:	82
+	Child:	83
+	Child:	84
+	Child:	85
+	Child:	86
+	Child:	87
+	Child:	88
+	Child:	89
+	Child:	90
+	Child:	91
+	Child:	92
+	Child:	93
+	Child:	94
+	Child:	95
+	Child:	96
+	Child:	97
+	Child:	98
+	Child:	99
+	Child:	100
+	Child:	101
+	Child:	102
+	Child:	103
+	Child:	104
+	Child:	105
+	Child:	106
+	Child:	107
+	Child:	108
+	Child:	109
+	Child:	110
+	Child:	111
+	Child:	112
+	Child:	113
+	Child:	114
+	Child:	115
+	Child:	116
+	Child:	117
+	Child:	118
+	Child:	119
+	Child:	120
+	Child:	121
+	Child:	122
+	Child:	123
+	Child:	124
+	Child:	125
+	Child:	126
+	Child:	127
+	Child:	128
+	Child:	129
+	Child:	130
+	Child:	131
+	Child:	132
+	Child:	133
+	Child:	134
+	Child:	135
+	Child:	136
+	Child:	137
+	Child:	138
+	Child:	139
+	Child:	140
+	Child:	141
+	Child:	142
+	Child:	143
+	Child:	144
+	Child:	145
+	Child:	146
+	Child:	147
+	Child:	148
+	Child:	149
+	Child:	150
+	Child:	151
+	Child:	152
+	Child:	153
+	Child:	154
+	Child:	155
+	Child:	156
+	Child:	157
+	Child:	158
+	Child:	159
+	Child:	160
+	Child:	161
+	Child:	162
+	Child:	163
+	Child:	164
+	Child:	165
+	Child:	166
+	Child:	167
+	Child:	168
+	Child:	169
+	Child:	170
+	Child:	171
+	Child:	172
+	Child:	173
+	Child:	174
+	Child:	175
+	Child:	176
+	Child:	177
+	Child:	178
+	Child:	179
+	Child:	180
+	Child:	181
+	Child:	182
+	Child:	183
+	Child:	184
+	Child:	185
+	Child:	186
+	Child:	187
+	Child:	188
+	Child:	189
+	Child:	190
+	Child:	191
+	Child:	192
+	Child:	193
+	Child:	194
+	Child:	195
+	Child:	196
+	Child:	197
+	Child:	198
+	Child:	199
+	Child:	200
+	Child:	201
+	Child:	202
+	Child:	203
+	Child:	204
+	Child:	205
+	Child:	206
+	Child:	207
+	Child:	208
+	Child:	209
+	Child:	210
+	Child:	211
+	Child:	212
+	Child:	213
+	Child:	214
+	Child:	215
+	Child:	216
+	Child:	217
+	Child:	218
+	Child:	219
+	Child:	220
+	Child:	221
+	Child:	222
+	Child:	223
+	Child:	224
+	Child:	225
+	Child:	226
+	Child:	227
+	Child:	228
+	Child:	229
+	Child:	230
+	Child:	231
+	Child:	232
+	Child:	233
+	Child:	234
+	Child:	235
+	Child:	236
+	Child:	237
+	Child:	238
+	Child:	239
+	Child:	240
+	Child:	241
+	Child:	242
+	Child:	243
+	Child:	244
+	Child:	245
+	Child:	246
+	Child:	247
+	Child:	248
+	Child:	249
+	Child:	250
+	Child:	251
+	Child:	252
+	Child:	253
+	Child:	254
+	Child:	255
+	Child:	256
+	Child:	257
+	Child:	258
+	Child:	259
+	Child:	260
+	Child:	261
+	Child:	262
+	Child:	263
+	Child:	264
+	Child:	265
+	Child:	266
+	Child:	267
+	Child:	268
+	Child:	269
+	Child:	270
+	Child:	271
+	Child:	272
+	Child:	273
+	Child:	274
+	Child:	275
+	Child:	276
+	Child:	277
+	Child:	278
+	Child:	279
+	Child:	280
+	Child:	281
+	Child:	282
+	Child:	283
+	Child:	284
+	Child:	285
+	Child:	286
+	Child:	287
+	Child:	288
+	Child:	289
+	Child:	290
+	Child:	291
+	Child:	292
+	Child:	293
+	Child:	294
+	Child:	295
+	Child:	296
+	Child:	297
+	Child:	298
+	Child:	299
+	Child:	300
+	Child:	301
+	Child:	302
+	Child:	303
+	Child:	304
+	Child:	305
+	Child:	306
+	Child:	307
+	Child:	308
+	Child:	309
+	Child:	310
+	Child:	311
+	Child:	312
+	Child:	313
+	Child:	314
+	Child:	315
+	Child:	316
+	Child:	317
+	Child:	318
+	Child:	319
+	Child:	320
+	Child:	321
+	Child:	322
+	Child:	323
+	Child:	324
+	Child:	325
+	Child:	326
+	Child:	327
+	Child:	328
+	Child:	329
+	Child:	330
+	Child:	331
+	Child:	332
+	Child:	333
+	Child:	334
+	Child:	335
+	Child:	336
+	Child:	337
+	Child:	338
+	Child:	339
+	Child:	340
+	Child:	341
+	Child:	342
+	Child:	343
+	Child:	344
+	Child:	345
+	Child:	346
+	Child:	347
+	Child:	348
+	Child:	349
+	Child:	350
+	Child:	351
+	Child:	352
+	Child:	353
+	Child:	354
+	Child:	355
+	Child:	356
+	Child:	357
+	Child:	358
+	Child:	359
+	Child:	360
+	Child:	361
+	Child:	362
+	Child:	363
+	Child:	364
+	Child:	365
+	Child:	366
+	Child:	367
+	Child:	368
+	Child:	369
+	Child:	370
+	Child:	371
+	Child:	372
+	Child:	373
+	Child:	374
+	Child:	375
+	Child:	376
+	Child:	377
+	Child:	378
+	Child:	379
+	Child:	380
+	Child:	381
+	Child:	382
+	Child:	383
+	Child:	384
+	Child:	385
+	Child:	386
+	Child:	387
+	Child:	388
+	Child:	389
+	Child:	390
+	Child:	391
+	Child:	392
+	Child:	393
+	Child:	394
+	Child:	395
+	Child:	396
+	Child:	397
+	Child:	398
+	Child:	399
+	Child:	400
+	Child:	401
+	Child:	402
+	Child:	403
+	Child:	404
+	Child:	405
+	Child:	406
+	Child:	407
+	Child:	408
+	Child:	409
+	Child:	410
+	Child:	411
+	Child:	412
+	Child:	413
+	Child:	414
+	Child:	415
+	Child:	416
+	Child:	417
+	Child:	418
+	Child:	419
+	Child:	420
+	Child:	421
+	Child:	422
+	Child:	423
+	Child:	424
+	Child:	425
+	Child:	426
+	Child:	427
+	Child:	428
+	Child:	429
+	Child:	430
+	Child:	431
+	Child:	432
+	Child:	433
+	Child:	434
+	Child:	435
+	Child:	436
+	Child:	437
+	Child:	438
+	Child:	439
+	Child:	440
+	Child:	441
+	Child:	442
+	Child:	443
+	Child:	444
+	Child:	445
+	Child:	446
+	Child:	447
+	Child:	448
+	Child:	449
+	Child:	450
+	Child:	451
+	Child:	452
+	Child:	453
+	Child:	454
+	Child:	455
+	Child:	456
+	Child:	457
+	Child:	458
+	Child:	459
+	Child:	460
+	Child:	461
+	Child:	462
+	Child:	463
+	Child:	464
+	Child:	465
+	Child:	466
+	Child:	467
+	Child:	468
+	Child:	469
+	Child:	470
+	Child:	471
+	Child:	472
+	Child:	473
+	Child:	474
+	Child:	475
+	Child:	476
+	Child:	477
+	Child:	478
+	Child:	479
+	Child:	480
+	Child:	481
+	Child:	482
+	Child:	483
+	Child:	484
+	Child:	485
+	Child:	486
+	Child:	487
+	Child:	488
+	Child:	489
+	Child:	490
+	Child:	491
+	Child:	492
+	Child:	493
+	Child:	494
+	Child:	495
+	Child:	496
+	Child:	497
+	Child:	498
+	Child:	499
+	Child:	500
+	Child:	501
+	Child:	502
+	Child:	503
+	Child:	504
+	Child:	505
+	Child:	506
+	Child:	507
+	Child:	508
+	Child:	509
+	Child:	510
+	Child:	511
+	Child:	512
+	Child:	513
+	Child:	514
+	Child:	515
+	Child:	516
+	Child:	517
+	Child:	518
+	Child:	519
+	Child:	520
+	Child:	521
+	Child:	522
+	Child:	523
+	Child:	524
+	Child:	525
+	Child:	526
+	Child:	527
+	Child:	528
+	Child:	529
+	Child:	530
+	Child:	531
+	Child:	532
+	Child:	533
+	Child:	534
+	Child:	535
+	Child:	536
+	Child:	537
+	Child:	538
+	Child:	539
+	Child:	540
+	Child:	541
+	Child:	542
+	Child:	543
+	Child:	544
+	Child:	545
+	Child:	546
+	Child:	547
+	Child:	548
+	Child:	549
+	Child:	550
+	Child:	551
+	Child:	552
+	Child:	553
+	Child:	554
+	Child:	555
+	Child:	556
+	Child:	557
+	Child:	558
+	Child:	559
+	Child:	560
+	Child:	561
+	Child:	562
+	Child:	563
+	Child:	564
+	Child:	565
+	Child:	566
+	Child:	567
+	Child:	568
+	Child:	569
+	Child:	570
+	Child:	571
+	Child:	572
+	Child:	573
+	Child:	574
+	Child:	575
+	Child:	576
+	Child:	577
+	Child:	578
+	Child:	579
+	Child:	580
+	Child:	581
+	Child:	582
+	Child:	583
+	Child:	584
+	Child:	585
+	Child:	586
+	Child:	587
+	Child:	588
+	Child:	589
+	Child:	590
+	Child:	591
+	Child:	592
+	Child:	593
+	Child:	594
+	Child:	595
+	Child:	596
+	Child:	597
+	Child:	598
+	Child:	599
+	Child:	600
+	Child:	601
+	Child:	602
+	Child:	603
+	Child:	604
+	Child:	605
+	Child:	606
+	Child:	607
+	Child:	608
+	Child:	609
+	Child:	610
+	Child:	611
+	Child:	612
+	Child:	613
+	Child:	614
+	Child:	615
+	Child:	616
+	Child:	617
+	Child:	618
+	Child:	619
+	Child:	620
+	Child:	621
+	Child:	622
+	Child:	623
+	Child:	624
+	Child:	625
+	Child:	626
+	Child:	627
+	Child:	628
+	Child:	629
+	Child:	630
+	Child:	631
+	Child:	632
+	Child:	633
+	Child:	634
+	Child:	635
+	Child:	636
+	Child:	637
+	Child:	638
+	Child:	639
+	Child:	640
+	Child:	641
+	Child:	642
+	Child:	643
+	Child:	644
+	Child:	645
+	Child:	646
+	Child:	647
+	Child:	648
+	Child:	649
+	Child:	650
+	Child:	651
+	Child:	652
+	Child:	653
+	Child:	654
+	Child:	655
+	Child:	656
+	Child:	657
+	Child:	658
+	Child:	659
+	Child:	660
+	Child:	661
+	Child:	662
+	Child:	663
+	Child:	664
+	Child:	665
+	Child:	666
+	Child:	667
+	Child:	668
+	Child:	669
+	Child:	670
+	Child:	671
+	Child:	672
+	Child:	673
+	Child:	674
+	Child:	675
+	Child:	676
+	Child:	677
+	Child:	678
+	Child:	679
+	Child:	680
+	Child:	681
+	Child:	682
+	Child:	683
+	Child:	684
+	Child:	685
+	Child:	686
+	Child:	687
+	Child:	688
+	Child:	689
+	Child:	690
+	Child:	691
+	Child:	692
+	Child:	693
+	Child:	694
+	Child:	695
+	Child:	696
+	Child:	697
+	Child:	698
+	Child:	699
+	Child:	700
+	Child:	701
+	Child:	702
+	Child:	703
+	Child:	704
+	Child:	705
+	Child:	706
+	Child:	707
+	Child:	708
+	Child:	709
+	Child:	710
+	Child:	711
+	Child:	712
+	Child:	713
+	Child:	714
+	Child:	715
+	Child:	716
+	Child:	717
+	Child:	718
+	Child:	719
+	Child:	720
+	Child:	721
+	Child:	722
+	Child:	723
+	Child:	724
+	Child:	725
+	Child:	726
+	Child:	727
+	Child:	728
+	Child:	729
+	Child:	730
+	Child:	731
+	Child:	732
+	Child:	733
+	Child:	734
+	Child:	735
+	Child:	736
+	Child:	737
+	Child:	738
+	Child:	739
+	Child:	740
+	Child:	741
+	Child:	742
+	Child:	743
+	Child:	744
+	Child:	745
+	Child:	746
+	Child:	747
+	Child:	748
+	Child:	749
+	Child:	750
+	Child:	751
+	Child:	752
+	Child:	753
+	Child:	754
+	Child:	755
+	Child:	756
+	Child:	757
+	Child:	758
+	Child:	759
+	Child:	760
+	Child:	761
+	Child:	762
+	Child:	763
+	Child:	764
+	Child:	765
+	Child:	766
+	Child:	767
+	Child:	768
+	Child:	769
+	Child:	770
+	Child:	771
+	Child:	772
+	Child:	773
+	Child:	774
+	Child:	775
+	Child:	776
+	Child:	777
+	Child:	778
+	Child:	779
+	Child:	780
+	Child:	781
+	Child:	782
+	Child:	783
+	Child:	784
+	Child:	785
+	Child:	786
+	Child:	787
+	Child:	788
+	Child:	789
+	Child:	790
+	Child:	791
+	Child:	792
+	Child:	793
+	Child:	794
+	Child:	795
+	Child:	796
+	Child:	797
+	Child:	798
+	Child:	799
+	Child:	800
+	Child:	801
+	Child:	802
+	Child:	803
+	Child:	804
+	Child:	805
+	Child:	806
+	Child:	807
+	Child:	808
+	Child:	809
+	Child:	810
+	Child:	811
+	Child:	812
+	Child:	813
+	Child:	814
+	Child:	815
+	Child:	816
+	Child:	817
+	Child:	818
+	Child:	819
+	Child:	820
+	Child:	821
+	Child:	822
+	Child:	823
+	Child:	824
+	Child:	825
+	Child:	826
+	Child:	827
+	Child:	828
+	Child:	829
+	Child:	830
+	Child:	831
+	Child:	832
+	Child:	833
+	Child:	834
+	Child:	835
+	Child:	836
+	Child:	837
+	Child:	838
+	Child:	839
+	Child:	840
+	Child:	841
+	Child:	842
+	Child:	843
+	Child:	844
+	Child:	845
+	Child:	846
+	Child:	847
+	Child:	848
+	Child:	849
+	Child:	850
+	Child:	851
+	Child:	852
+	Child:	853
+	Child:	854
+	Child:	855
+	Child:	856
+	Child:	857
+	Child:	858
+	Child:	859
+	Child:	860
+	Child:	861
+	Child:	862
+	Child:	863
+	Child:	864
+	Child:	865
+	Child:	866
+	Child:	867
+	Child:	868
+	Child:	869
+	Child:	870
+	Child:	871
+	Child:	872
+	Child:	873
+	Child:	874
+	Child:	875
+	Child:	876
+	Child:	877
+	Child:	878
+	Child:	879
+	Child:	880
+	Child:	881
+	Child:	882
+	Child:	883
+	Child:	884
+	Child:	885
+	Child:	886
+	Child:	887
+	Child:	888
+	Child:	889
+	Child:	890
+	Child:	891
+	Child:	892
+	Child:	893
+	Child:	894
+	Child:	895
+	Child:	896
+	Child:	897
+	Child:	898
+	Child:	899
+	Child:	900
+	Child:	901
+	Child:	902
+	Child:	903
+	Child:	904
+	Child:	905
+	Child:	906
+	Child:	907
+	Child:	908
+	Child:	909
+	Child:	910
+	Child:	911
+	Child:	912
+	Child:	913
+	Child:	914
+	Child:	915
+	Child:	916
+	Child:	917
+	Child:	918
+	Child:	919
+	Child:	920
+	Child:	921
+	Child:	922
+	Child:	923
+	Child:	924
+	Child:	925
+	Child:	926
+	Child:	927
+	Child:	928
+	Child:	929
+	Child:	930
+	Child:	931
+	Child:	932
+	Child:	933
+	Child:	934
+	Child:	935
+)
+
+(TClr.3
+)
+
+(TClr.4
+	Red:	0xb300
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.5
+	Red:	0xff00
+)
+
+(TClr.6
+	Red:	0xff00
+	Green:	0x6200
+)
+
+(TClr.7
+	Red:	0xff00
+	Green:	0x8000
+)
+
+(TClr.8
+	Red:	0xff00
+	Green:	0xaa00
+)
+
+(TClr.9
+	Red:	0xff00
+	Green:	0xd500
+)
+
+(TClr.10
+	Red:	0xff00
+	Green:	0xf400
+)
+
+(TClr.11
+	Red:	0xff00
+	Green:	0xff00
+)
+
+(TClr.12
+	Red:	0xfd00
+	Green:	0xff00
+)
+
+(TClr.13
+	Red:	0xea00
+	Green:	0xff00
+)
+
+(TClr.14
+	Red:	0xd500
+	Green:	0xff00
+)
+
+(TClr.15
+	Red:	0xb700
+	Green:	0xff00
+)
+
+(TClr.16
+	Red:	0x9500
+	Green:	0xff00
+)
+
+(TClr.17
+	Red:	0x6a00
+	Green:	0xff00
+)
+
+(TClr.18
+	Red:	0x5500
+	Green:	0xff00
+)
+
+(TClr.19
+	Green:	0xff00
+)
+
+(TClr.20
+	Green:	0xff00
+	Blue:	0x8000
+)
+
+(TClr.21
+	Green:	0xff00
+	Blue:	0xc400
+)
+
+(TClr.22
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.23
+	Green:	0xe100
+	Blue:	0xff00
+)
+
+(TClr.24
+	Green:	0xbf00
+	Blue:	0xff00
+)
+
+(TClr.25
+	Green:	0x6a00
+	Blue:	0xff00
+)
+
+(TClr.26
+	Blue:	0xff00
+)
+
+(TClr.27
+	Red:	0x8000
+	Blue:	0xff00
+)
+
+(TClr.28
+	Red:	0xbf00
+	Blue:	0xff00
+)
+
+(TClr.29
+	Red:	0xe100
+	Blue:	0xff00
+)
+
+(TClr.30
+	Red:	0xf900
+	Blue:	0xff00
+)
+
+(TClr.31
+	Red:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.32
+	Red:	0xff00
+	Blue:	0xd500
+)
+
+(TClr.33
+	Red:	0xff00
+	Blue:	0xaa00
+)
+
+(TClr.34
+	Red:	0xff00
+	Blue:	0x8000
+)
+
+(TClr.35
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.36
+	Red:	0xcc00
+	Green:	0xcc00
+	Blue:	0xcc00
+)
+
+(TClr.37
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.38
+	Red:	0xff00
+	Green:	0xa100
+	Blue:	0x6600
+)
+
+(TClr.39
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0x6600
+)
+
+(TClr.40
+	Red:	0xff00
+	Green:	0xcc00
+	Blue:	0x6600
+)
+
+(TClr.41
+	Red:	0xff00
+	Green:	0xe600
+	Blue:	0x6600
+)
+
+(TClr.42
+	Red:	0xff00
+	Green:	0xf900
+	Blue:	0x6600
+)
+
+(TClr.43
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.44
+	Red:	0xfe00
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.45
+	Red:	0xf200
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.46
+	Red:	0xe600
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.47
+	Red:	0xd400
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.48
+	Red:	0xbf00
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.49
+	Red:	0xa600
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.50
+	Red:	0x9900
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.51
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.52
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.53
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0xdb00
+)
+
+(TClr.54
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.55
+	Red:	0x6600
+	Green:	0xed00
+	Blue:	0xff00
+)
+
+(TClr.56
+	Red:	0x6600
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.57
+	Red:	0x6600
+	Green:	0xa600
+	Blue:	0xff00
+)
+
+(TClr.58
+	Red:	0x6600
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.59
+	Red:	0xb300
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.60
+	Red:	0xd900
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.61
+	Red:	0xed00
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.62
+	Red:	0xfb00
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.63
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.64
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xe600
+)
+
+(TClr.65
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xcc00
+)
+
+(TClr.66
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xb300
+)
+
+(TClr.67
+	Red:	0x6600
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.68
+	Red:	0xd600
+	Green:	0xd600
+	Blue:	0xd600
+)
+
+(TClr.69
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.70
+	Red:	0xff00
+	Green:	0xb800
+	Blue:	0x8c00
+)
+
+(TClr.71
+	Red:	0xff00
+	Green:	0xc600
+	Blue:	0x8c00
+)
+
+(TClr.72
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0x8c00
+)
+
+(TClr.73
+	Red:	0xff00
+	Green:	0xec00
+	Blue:	0x8c00
+)
+
+(TClr.74
+	Red:	0xff00
+	Green:	0xfa00
+	Blue:	0x8c00
+)
+
+(TClr.75
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.76
+	Red:	0xfe00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.77
+	Red:	0xf500
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.78
+	Red:	0xcb00
+	Green:	0xde00
+	Blue:	0x6b00
+)
+
+(TClr.79
+	Red:	0xde00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.80
+	Red:	0xcf00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.81
+	Red:	0xbc00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.82
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.83
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.84
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0xc600
+)
+
+(TClr.85
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0xe400
+)
+
+(TClr.86
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.87
+	Red:	0x8c00
+	Green:	0xf200
+	Blue:	0xff00
+)
+
+(TClr.88
+	Red:	0x8c00
+	Green:	0xe200
+	Blue:	0xff00
+)
+
+(TClr.89
+	Red:	0x8c00
+	Green:	0xbc00
+	Blue:	0xff00
+)
+
+(TClr.90
+	Red:	0x8c00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.91
+	Red:	0xc600
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.92
+	Red:	0xe200
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.93
+	Red:	0xf200
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.94
+	Red:	0xfc00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.95
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.96
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xec00
+)
+
+(TClr.97
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xd900
+)
+
+(TClr.98
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xc600
+)
+
+(TClr.99
+	Red:	0x8000
+	Green:	0x8000
+	Blue:	0x8000
+)
+
+(TClr.100
+	Red:	0xe600
+	Green:	0xe600
+	Blue:	0xe600
+)
+
+(TClr.101
+	Red:	0xff00
+	Green:	0xba00
+	Blue:	0xba00
+)
+
+(TClr.102
+	Red:	0xff00
+	Green:	0xd500
+	Blue:	0xba00
+)
+
+(TClr.103
+	Red:	0xff00
+	Green:	0xdd00
+	Blue:	0xba00
+)
+
+(TClr.104
+	Red:	0xff00
+	Green:	0xe800
+	Blue:	0xba00
+)
+
+(TClr.105
+	Red:	0xff00
+	Green:	0xf400
+	Blue:	0xba00
+)
+
+(TClr.106
+	Red:	0xff00
+	Green:	0xfc00
+	Blue:	0xba00
+)
+
+(TClr.107
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.108
+	Red:	0xfe00
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.109
+	Red:	0xf900
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.110
+	Red:	0xeb00
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.111
+	Red:	0xeb00
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.112
+	Red:	0xe200
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.113
+	Red:	0xd700
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.114
+	Red:	0xd100
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.115
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.116
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0xdd00
+)
+
+(TClr.117
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0xef00
+)
+
+(TClr.118
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.119
+	Red:	0xba00
+	Green:	0xf700
+	Blue:	0xff00
+)
+
+(TClr.120
+	Red:	0xba00
+	Green:	0xee00
+	Blue:	0xff00
+)
+
+(TClr.121
+	Red:	0xba00
+	Green:	0xd700
+	Blue:	0xff00
+)
+
+(TClr.122
+	Red:	0xba00
+	Green:	0xba00
+	Blue:	0xff00
+)
+
+(TClr.123
+	Red:	0xdd00
+	Green:	0xba00
+	Blue:	0xff00
+)
+
+(TClr.124
+	Red:	0xee00
+	Green:	0xba00
+	Blue:	0xff00
+)
+
+(TClr.125
+	Red:	0xf700
+	Green:	0xba00
+	Blue:	0xff00
+)
+
+(TClr.126
+	Red:	0xfd00
+	Green:	0xba00
+	Blue:	0xff00
+)
+
+(TClr.127
+	Red:	0xff00
+	Green:	0xba00
+	Blue:	0xff00
+)
+
+(TClr.128
+	Red:	0xff00
+	Green:	0xba00
+	Blue:	0xf400
+)
+
+(TClr.129
+	Red:	0xff00
+	Green:	0xba00
+	Blue:	0xe800
+)
+
+(TClr.130
+	Red:	0xff00
+	Green:	0xba00
+	Blue:	0xdd00
+)
+
+(TClr.131
+	Red:	0x9900
+	Green:	0x9900
+	Blue:	0x9900
+)
+
+(TClr.132
+	Red:	0xf200
+	Green:	0xf200
+	Blue:	0xf200
+)
+
+(TClr.133
+	Red:	0xff00
+	Green:	0xd600
+	Blue:	0xd600
+)
+
+(TClr.134
+	Red:	0xff00
+	Green:	0xe600
+	Blue:	0xd600
+)
+
+(TClr.135
+	Red:	0xff00
+	Green:	0xeb00
+	Blue:	0xd600
+)
+
+(TClr.136
+	Red:	0xff00
+	Green:	0xf100
+	Blue:	0xd600
+)
+
+(TClr.137
+	Red:	0xff00
+	Green:	0xf800
+	Blue:	0xd600
+)
+
+(TClr.138
+	Red:	0xff00
+	Green:	0xfd00
+	Blue:	0xd600
+)
+
+(TClr.139
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.140
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.141
+	Red:	0xfc00
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.142
+	Red:	0xf800
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.143
+	Red:	0xf300
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.144
+	Red:	0xee00
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.145
+	Red:	0xe700
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.146
+	Red:	0xe400
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.147
+	Red:	0xd600
+	Green:	0xff00
+	Blue:	0xd600
+)
+
+(TClr.148
+	Red:	0xd600
+	Green:	0xff00
+	Blue:	0xeb00
+)
+
+(TClr.149
+	Red:	0xd600
+	Green:	0xff00
+	Blue:	0xf500
+)
+
+(TClr.150
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.151
+	Red:	0xd600
+	Green:	0xfa00
+	Blue:	0xff00
+)
+
+(TClr.152
+	Red:	0xd600
+	Green:	0xf500
+	Blue:	0xff00
+)
+
+(TClr.153
+	Red:	0xd600
+	Green:	0xe700
+	Blue:	0xff00
+)
+
+(TClr.154
+	Red:	0xeb00
+	Green:	0xeb00
+	Blue:	0xff00
+)
+
+(TClr.155
+	Red:	0xeb00
+	Green:	0xd600
+	Blue:	0xff00
+)
+
+(TClr.156
+	Red:	0xf500
+	Green:	0xd600
+	Blue:	0xff00
+)
+
+(TClr.157
+	Red:	0xfa00
+	Green:	0xd600
+	Blue:	0xff00
+)
+
+(TClr.158
+	Red:	0xfe00
+	Green:	0xd600
+	Blue:	0xff00
+)
+
+(TClr.159
+	Red:	0xff00
+	Green:	0xd600
+	Blue:	0xff00
+)
+
+(TClr.160
+	Red:	0xff00
+	Green:	0xd600
+	Blue:	0xf800
+)
+
+(TClr.161
+	Red:	0xff00
+	Green:	0xd600
+	Blue:	0xf100
+)
+
+(TClr.162
+	Red:	0xff00
+	Green:	0xd600
+	Blue:	0xeb00
+)
+
+(TClr.163
+	Red:	0xad00
+	Green:	0xad00
+	Blue:	0xad00
+)
+
+(TClr.164
+	Red:	0xfc00
+	Green:	0xfc00
+	Blue:	0xfc00
+)
+
+(TClr.165
+	Red:	0xff00
+	Green:	0xed00
+	Blue:	0xed00
+)
+
+(TClr.166
+	Red:	0xff00
+	Green:	0xf400
+	Blue:	0xed00
+)
+
+(TClr.167
+	Red:	0xff00
+	Green:	0xf600
+	Blue:	0xed00
+)
+
+(TClr.168
+	Red:	0xff00
+	Green:	0xf900
+	Blue:	0xed00
+)
+
+(TClr.169
+	Red:	0xff00
+	Green:	0xfc00
+	Blue:	0xed00
+)
+
+(TClr.170
+	Red:	0xff00
+	Green:	0xfe00
+	Blue:	0xed00
+)
+
+(TClr.171
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.172
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.173
+	Red:	0xfe00
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.174
+	Red:	0xfc00
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.175
+	Red:	0xfa00
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.176
+	Red:	0xf800
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.177
+	Red:	0xf500
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.178
+	Red:	0xf300
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.179
+	Red:	0xed00
+	Green:	0xff00
+	Blue:	0xed00
+)
+
+(TClr.180
+	Red:	0xed00
+	Green:	0xff00
+	Blue:	0xf600
+)
+
+(TClr.181
+	Red:	0xed00
+	Green:	0xff00
+	Blue:	0xfb00
+)
+
+(TClr.182
+	Red:	0xed00
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.183
+	Red:	0xed00
+	Green:	0xfd00
+	Blue:	0xff00
+)
+
+(TClr.184
+	Red:	0xed00
+	Green:	0xfb00
+	Blue:	0xff00
+)
+
+(TClr.185
+	Red:	0xed00
+	Green:	0xf500
+	Blue:	0xff00
+)
+
+(TClr.186
+	Red:	0xed00
+	Green:	0xed00
+	Blue:	0xff00
+)
+
+(TClr.187
+	Red:	0xf600
+	Green:	0xed00
+	Blue:	0xff00
+)
+
+(TClr.188
+	Red:	0xfb00
+	Green:	0xed00
+	Blue:	0xff00
+)
+
+(TClr.189
+	Red:	0xfd00
+	Green:	0xed00
+	Blue:	0xff00
+)
+
+(TClr.190
+	Red:	0xff00
+	Green:	0xed00
+	Blue:	0xff00
+)
+
+(TClr.191
+	Red:	0xff00
+	Green:	0xeb00
+	Blue:	0xff00
+)
+
+(TClr.192
+	Red:	0xff00
+	Green:	0xed00
+	Blue:	0xfc00
+)
+
+(TClr.193
+	Red:	0xff00
+	Green:	0xed00
+	Blue:	0xf900
+)
+
+(TClr.194
+	Red:	0xff00
+	Green:	0xed00
+	Blue:	0xf600
+)
+
+(TClr.195
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.196
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.197
+	Green:	0xff00
+	Blue:	0x8000
+)
+
+(TClr.198
+	Green:	0xff00
+	Blue:	0x3300
+)
+
+(TClr.199
+	Green:	0xff00
+	Blue:	0x1a00
+)
+
+(TClr.200
+	Green:	0xff00
+)
+
+(TClr.201
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.202
+	Green:	0xd900
+	Blue:	0xb300
+)
+
+(TClr.203
+	Green:	0xd900
+	Blue:	0x8000
+)
+
+(TClr.204
+	Green:	0xd900
+	Blue:	0x3300
+)
+
+(TClr.205
+	Green:	0xd900
+)
+
+(TClr.206
+	Green:	0xa600
+	Blue:	0xff00
+)
+
+(TClr.207
+	Green:	0xa600
+	Blue:	0xcc00
+)
+
+(TClr.208
+	Green:	0xa600
+	Blue:	0x9900
+)
+
+(TClr.209
+	Green:	0xa600
+	Blue:	0x4d00
+)
+
+(TClr.210
+	Green:	0xa600
+)
+
+(TClr.211
+	Green:	0x8000
+	Blue:	0xff00
+)
+
+(TClr.212
+	Green:	0x8000
+	Blue:	0xcc00
+)
+
+(TClr.213
+	Green:	0x4d00
+	Blue:	0xff00
+)
+
+(TClr.214
+	Green:	0x4d00
+	Blue:	0xb300
+)
+
+(TClr.215
+	Green:	0x1a00
+	Blue:	0xff00
+)
+
+(TClr.216
+	Green:	0x1a00
+	Blue:	0xcc00
+)
+
+(TClr.217
+	Red:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.218
+	Red:	0xff00
+	Blue:	0xe600
+)
+
+(TClr.219
+	Red:	0xff00
+	Blue:	0x9900
+)
+
+(TClr.220
+	Red:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.221
+	Red:	0xff00
+)
+
+(TClr.222
+	Red:	0xfb00
+	Blue:	0xff00
+)
+
+(TClr.223
+	Red:	0xfb00
+	Blue:	0xe600
+)
+
+(TClr.224
+	Red:	0xfb00
+	Blue:	0x9900
+)
+
+(TClr.225
+	Red:	0xfb00
+	Blue:	0x6600
+)
+
+(TClr.226
+	Red:	0xfb00
+)
+
+(TClr.227
+	Red:	0x4000
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.228
+	Red:	0x4000
+	Green:	0xff00
+	Blue:	0xc600
+)
+
+(TClr.229
+	Red:	0x4000
+	Green:	0xff00
+	Blue:	0x9f00
+)
+
+(TClr.230
+	Red:	0x4000
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.231
+	Red:	0x4000
+	Green:	0xff00
+	Blue:	0x5300
+)
+
+(TClr.232
+	Red:	0x4000
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.233
+	Red:	0x4000
+	Green:	0xe200
+	Blue:	0xff00
+)
+
+(TClr.234
+	Red:	0x4000
+	Green:	0xe200
+	Blue:	0xc600
+)
+
+(TClr.235
+	Red:	0x4000
+	Green:	0xe200
+	Blue:	0x9f00
+)
+
+(TClr.236
+	Red:	0x4000
+	Green:	0xe200
+	Blue:	0x6600
+)
+
+(TClr.237
+	Red:	0x4000
+	Green:	0xe200
+	Blue:	0x4000
+)
+
+(TClr.238
+	Red:	0x4000
+	Green:	0xbc00
+	Blue:	0xff00
+)
+
+(TClr.239
+	Red:	0x4000
+	Green:	0xbc00
+	Blue:	0xd900
+)
+
+(TClr.240
+	Red:	0x4000
+	Green:	0xbc00
+	Blue:	0xb300
+)
+
+(TClr.241
+	Red:	0x4000
+	Green:	0xbc00
+	Blue:	0x7900
+)
+
+(TClr.242
+	Red:	0x4000
+	Green:	0xbc00
+	Blue:	0x4000
+)
+
+(TClr.243
+	Red:	0x4000
+	Green:	0x9f00
+	Blue:	0xff00
+)
+
+(TClr.244
+	Red:	0x4000
+	Green:	0x9f00
+	Blue:	0xd900
+)
+
+(TClr.245
+	Red:	0x4000
+	Green:	0x7900
+	Blue:	0xff00
+)
+
+(TClr.246
+	Red:	0x4000
+	Green:	0x7900
+	Blue:	0xc600
+)
+
+(TClr.247
+	Red:	0x4000
+	Green:	0x5300
+	Blue:	0xff00
+)
+
+(TClr.248
+	Red:	0x4000
+	Green:	0x5300
+	Blue:	0xd900
+)
+
+(TClr.249
+	Red:	0xff00
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.250
+	Red:	0xff00
+	Green:	0x4000
+	Blue:	0xec00
+)
+
+(TClr.251
+	Red:	0xff00
+	Green:	0x4000
+	Blue:	0xb300
+)
+
+(TClr.252
+	Red:	0xff00
+	Green:	0x4000
+	Blue:	0x8c00
+)
+
+(TClr.253
+	Red:	0xff00
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.254
+	Red:	0xfc00
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.255
+	Red:	0xfc00
+	Green:	0x4000
+	Blue:	0xec00
+)
+
+(TClr.256
+	Red:	0xfc00
+	Green:	0x4000
+	Blue:	0xb300
+)
+
+(TClr.257
+	Red:	0xfc00
+	Green:	0x4000
+	Blue:	0x8c00
+)
+
+(TClr.258
+	Red:	0xfc00
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.259
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.260
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0xd100
+)
+
+(TClr.261
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.262
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0x8000
+)
+
+(TClr.263
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0x7500
+)
+
+(TClr.264
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.265
+	Red:	0x6600
+	Green:	0xe800
+	Blue:	0xff00
+)
+
+(TClr.266
+	Red:	0x6600
+	Green:	0xe800
+	Blue:	0xd100
+)
+
+(TClr.267
+	Red:	0x6600
+	Green:	0xe800
+	Blue:	0xb300
+)
+
+(TClr.268
+	Red:	0x6600
+	Green:	0xe800
+	Blue:	0x8500
+)
+
+(TClr.269
+	Red:	0x6600
+	Green:	0xe800
+	Blue:	0x6600
+)
+
+(TClr.270
+	Red:	0x6600
+	Green:	0xc900
+	Blue:	0xff00
+)
+
+(TClr.271
+	Red:	0x6600
+	Green:	0xc900
+	Blue:	0xe000
+)
+
+(TClr.272
+	Red:	0x6600
+	Green:	0xc900
+	Blue:	0xc200
+)
+
+(TClr.273
+	Red:	0x6600
+	Green:	0xc900
+	Blue:	0x9400
+)
+
+(TClr.274
+	Red:	0x6600
+	Green:	0xc900
+	Blue:	0x6600
+)
+
+(TClr.275
+	Red:	0x6600
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.276
+	Red:	0x6600
+	Green:	0xb300
+	Blue:	0xe000
+)
+
+(TClr.277
+	Red:	0x6600
+	Green:	0x9400
+	Blue:	0xff00
+)
+
+(TClr.278
+	Red:	0x6600
+	Green:	0x9400
+	Blue:	0xd100
+)
+
+(TClr.279
+	Red:	0x6600
+	Green:	0x7500
+	Blue:	0xff00
+)
+
+(TClr.280
+	Red:	0x6600
+	Green:	0x7500
+	Blue:	0xe000
+)
+
+(TClr.281
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.282
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xf000
+)
+
+(TClr.283
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xc200
+)
+
+(TClr.284
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0xa300
+)
+
+(TClr.285
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.286
+	Red:	0xfd00
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.287
+	Red:	0xfd00
+	Green:	0x6600
+	Blue:	0xf000
+)
+
+(TClr.288
+	Red:	0xfd00
+	Green:	0x6600
+	Blue:	0xc200
+)
+
+(TClr.289
+	Red:	0xfd00
+	Green:	0x6600
+	Blue:	0xa300
+)
+
+(TClr.290
+	Red:	0xfd00
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.291
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.292
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0xdd00
+)
+
+(TClr.293
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0xc600
+)
+
+(TClr.294
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0xa300
+)
+
+(TClr.295
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0x9800
+)
+
+(TClr.296
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.297
+	Red:	0x8c00
+	Green:	0xee00
+	Blue:	0xff00
+)
+
+(TClr.298
+	Red:	0x8c00
+	Green:	0xee00
+	Blue:	0xdd00
+)
+
+(TClr.299
+	Red:	0x8c00
+	Green:	0xee00
+	Blue:	0xc600
+)
+
+(TClr.300
+	Red:	0x8c00
+	Green:	0xee00
+	Blue:	0xa300
+)
+
+(TClr.301
+	Red:	0x8c00
+	Green:	0xee00
+	Blue:	0x8c00
+)
+
+(TClr.302
+	Red:	0x8c00
+	Green:	0xd700
+	Blue:	0xff00
+)
+
+(TClr.303
+	Red:	0x8c00
+	Green:	0xd700
+	Blue:	0xe800
+)
+
+(TClr.304
+	Red:	0x8c00
+	Green:	0xd700
+	Blue:	0xd100
+)
+
+(TClr.305
+	Red:	0x8c00
+	Green:	0xd700
+	Blue:	0xaf00
+)
+
+(TClr.306
+	Red:	0x8c00
+	Green:	0xd700
+	Blue:	0x8c00
+)
+
+(TClr.307
+	Red:	0x8c00
+	Green:	0xc600
+	Blue:	0xff00
+)
+
+(TClr.308
+	Red:	0x8c00
+	Green:	0xc600
+	Blue:	0xe800
+)
+
+(TClr.309
+	Red:	0x8c00
+	Green:	0xaf00
+	Blue:	0xff00
+)
+
+(TClr.310
+	Red:	0x8c00
+	Green:	0xaf00
+	Blue:	0xdd00
+)
+
+(TClr.311
+	Red:	0x8c00
+	Green:	0x9800
+	Blue:	0xff00
+)
+
+(TClr.312
+	Red:	0x8c00
+	Green:	0x9800
+	Blue:	0xe800
+)
+
+(TClr.313
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.314
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xf400
+)
+
+(TClr.315
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xd100
+)
+
+(TClr.316
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0xba00
+)
+
+(TClr.317
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.318
+	Red:	0xfd00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.319
+	Red:	0xfd00
+	Green:	0x8c00
+	Blue:	0xf400
+)
+
+(TClr.320
+	Red:	0xfd00
+	Green:	0x8c00
+	Blue:	0xd100
+)
+
+(TClr.321
+	Red:	0xfd00
+	Green:	0x8c00
+	Blue:	0xba00
+)
+
+(TClr.322
+	Red:	0xfd00
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.323
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.324
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xe800
+)
+
+(TClr.325
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.326
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xc200
+)
+
+(TClr.327
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.328
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.329
+	Red:	0xb300
+	Green:	0xf400
+	Blue:	0xff00
+)
+
+(TClr.330
+	Red:	0xb300
+	Green:	0xf400
+	Blue:	0xe800
+)
+
+(TClr.331
+	Red:	0xb300
+	Green:	0xf400
+	Blue:	0xd900
+)
+
+(TClr.332
+	Red:	0xb300
+	Green:	0xf400
+	Blue:	0xc200
+)
+
+(TClr.333
+	Red:	0xb300
+	Green:	0xf400
+	Blue:	0xb300
+)
+
+(TClr.334
+	Red:	0xb300
+	Green:	0xe400
+	Blue:	0xff00
+)
+
+(TClr.335
+	Red:	0xb300
+	Green:	0xe400
+	Blue:	0xf000
+)
+
+(TClr.336
+	Red:	0xb300
+	Green:	0xe400
+	Blue:	0xe000
+)
+
+(TClr.337
+	Red:	0xb300
+	Green:	0xe400
+	Blue:	0xc900
+)
+
+(TClr.338
+	Red:	0xb300
+	Green:	0xe400
+	Blue:	0xb300
+)
+
+(TClr.339
+	Red:	0xb300
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.340
+	Red:	0xb300
+	Green:	0xd900
+	Blue:	0xf000
+)
+
+(TClr.341
+	Red:	0xb300
+	Green:	0xc900
+	Blue:	0xff00
+)
+
+(TClr.342
+	Red:	0xb300
+	Green:	0xc900
+	Blue:	0xe800
+)
+
+(TClr.343
+	Red:	0xb300
+	Green:	0xba00
+	Blue:	0xff00
+)
+
+(TClr.344
+	Red:	0xb300
+	Green:	0xba00
+	Blue:	0xf000
+)
+
+(TClr.345
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.346
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0xf700
+)
+
+(TClr.347
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0xe000
+)
+
+(TClr.348
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0xd100
+)
+
+(TClr.349
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.350
+	Red:	0xfe00
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.351
+	Red:	0xfe00
+	Green:	0xb300
+	Blue:	0xf700
+)
+
+(TClr.352
+	Red:	0xfe00
+	Green:	0xb300
+	Blue:	0xe000
+)
+
+(TClr.353
+	Red:	0xfe00
+	Green:	0xb300
+	Blue:	0xd100
+)
+
+(TClr.354
+	Red:	0xfe00
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.355
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.356
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xf400
+)
+
+(TClr.357
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xec00
+)
+
+(TClr.358
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xe000
+)
+
+(TClr.359
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xdd00
+)
+
+(TClr.360
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.361
+	Red:	0xd900
+	Green:	0xf900
+	Blue:	0xff00
+)
+
+(TClr.362
+	Red:	0xd900
+	Green:	0xf900
+	Blue:	0xf400
+)
+
+(TClr.363
+	Red:	0xd900
+	Green:	0xf900
+	Blue:	0xec00
+)
+
+(TClr.364
+	Red:	0xd900
+	Green:	0xf900
+	Blue:	0xe000
+)
+
+(TClr.365
+	Red:	0xd900
+	Green:	0xf900
+	Blue:	0xd900
+)
+
+(TClr.366
+	Red:	0xd900
+	Green:	0xf200
+	Blue:	0xff00
+)
+
+(TClr.367
+	Red:	0xd900
+	Green:	0xf200
+	Blue:	0xf700
+)
+
+(TClr.368
+	Red:	0xd900
+	Green:	0xf200
+	Blue:	0xf000
+)
+
+(TClr.369
+	Red:	0xd900
+	Green:	0xf200
+	Blue:	0xe400
+)
+
+(TClr.370
+	Red:	0xd900
+	Green:	0xf200
+	Blue:	0xd900
+)
+
+(TClr.371
+	Red:	0xd900
+	Green:	0xec00
+	Blue:	0xff00
+)
+
+(TClr.372
+	Red:	0xd900
+	Green:	0xec00
+	Blue:	0xf700
+)
+
+(TClr.373
+	Red:	0xd900
+	Green:	0xe400
+	Blue:	0xff00
+)
+
+(TClr.374
+	Red:	0xd900
+	Green:	0xe400
+	Blue:	0xf400
+)
+
+(TClr.375
+	Red:	0xd900
+	Green:	0xdd00
+	Blue:	0xff00
+)
+
+(TClr.376
+	Red:	0xd900
+	Green:	0xdd00
+	Blue:	0xf700
+)
+
+(TClr.377
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.378
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0xfb00
+)
+
+(TClr.379
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0xf000
+)
+
+(TClr.380
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0xe800
+)
+
+(TClr.381
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.382
+	Red:	0xfe00
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.383
+	Red:	0xfe00
+	Green:	0xd900
+	Blue:	0xfb00
+)
+
+(TClr.384
+	Red:	0xfe00
+	Green:	0xd900
+	Blue:	0xf000
+)
+
+(TClr.385
+	Red:	0xfe00
+	Green:	0xd900
+	Blue:	0xe800
+)
+
+(TClr.386
+	Red:	0xfe00
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.387
+	Red:	0xe600
+	Blue:	0xff00
+)
+
+(TClr.388
+	Red:	0xe600
+	Blue:	0xcc00
+)
+
+(TClr.389
+	Red:	0xe600
+	Blue:	0x9900
+)
+
+(TClr.390
+	Red:	0xe600
+	Blue:	0x4d00
+)
+
+(TClr.391
+	Red:	0xe600
+)
+
+(TClr.392
+	Red:	0xbf00
+	Blue:	0xff00
+)
+
+(TClr.393
+	Red:	0xbf00
+	Blue:	0xcc00
+)
+
+(TClr.394
+	Red:	0xbf00
+	Blue:	0x9900
+)
+
+(TClr.395
+	Red:	0xbf00
+	Blue:	0x8000
+)
+
+(TClr.396
+	Red:	0xbf00
+	Blue:	0x3300
+)
+
+(TClr.397
+	Red:	0x9900
+	Blue:	0xff00
+)
+
+(TClr.398
+	Red:	0x9900
+	Blue:	0xcc00
+)
+
+(TClr.399
+	Red:	0x9900
+	Blue:	0x8000
+)
+
+(TClr.400
+	Red:	0x8000
+	Blue:	0xff00
+)
+
+(TClr.401
+	Red:	0x8000
+	Blue:	0xb300
+)
+
+(TClr.402
+	Red:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.403
+	Red:	0x6600
+	Blue:	0xb300
+)
+
+(TClr.404
+	Red:	0x4d00
+	Blue:	0xff00
+)
+
+(TClr.405
+	Red:	0x1a00
+	Blue:	0xff00
+)
+
+(TClr.406
+	Blue:	0xff00
+)
+
+(TClr.407
+	Red:	0xff00
+	Green:	0xff00
+)
+
+(TClr.408
+	Red:	0xff00
+	Green:	0xf700
+)
+
+(TClr.409
+	Red:	0xff00
+	Green:	0xe300
+)
+
+(TClr.410
+	Red:	0xff00
+	Green:	0xcc00
+)
+
+(TClr.411
+	Red:	0xff00
+	Green:	0xb300
+)
+
+(TClr.412
+	Red:	0xff00
+	Green:	0x9900
+)
+
+(TClr.413
+	Red:	0xff00
+	Green:	0x8000
+)
+
+(TClr.414
+	Red:	0xff00
+	Green:	0x6600
+)
+
+(TClr.415
+	Red:	0xff00
+	Green:	0x3300
+)
+
+(TClr.416
+	Red:	0xff00
+)
+
+(TClr.417
+	Red:	0xf200
+	Green:	0xff00
+)
+
+(TClr.418
+	Red:	0xf200
+	Green:	0xe600
+)
+
+(TClr.419
+	Red:	0xec00
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.420
+	Red:	0xec00
+	Green:	0x4000
+	Blue:	0xd900
+)
+
+(TClr.421
+	Red:	0xec00
+	Green:	0x4000
+	Blue:	0xb300
+)
+
+(TClr.422
+	Red:	0xec00
+	Green:	0x4000
+	Blue:	0x7900
+)
+
+(TClr.423
+	Red:	0xec00
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.424
+	Red:	0xcf00
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.425
+	Red:	0xcf00
+	Green:	0x4000
+	Blue:	0xd900
+)
+
+(TClr.426
+	Red:	0xcf00
+	Green:	0x4000
+	Blue:	0xb300
+)
+
+(TClr.427
+	Red:	0xcf00
+	Green:	0x4000
+	Blue:	0x9f00
+)
+
+(TClr.428
+	Red:	0xcf00
+	Green:	0x4000
+	Blue:	0x6600
+)
+
+(TClr.429
+	Red:	0xb300
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.430
+	Red:	0xb300
+	Green:	0x4000
+	Blue:	0xd900
+)
+
+(TClr.431
+	Red:	0xb300
+	Green:	0x4000
+	Blue:	0x9f00
+)
+
+(TClr.432
+	Red:	0x9f00
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.433
+	Red:	0x9f00
+	Green:	0x4000
+	Blue:	0xc600
+)
+
+(TClr.434
+	Red:	0x8c00
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.435
+	Red:	0x8c00
+	Green:	0x4000
+	Blue:	0xc600
+)
+
+(TClr.436
+	Red:	0x7900
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.437
+	Red:	0x5300
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.438
+	Red:	0x4000
+	Green:	0x4000
+	Blue:	0xff00
+)
+
+(TClr.439
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.440
+	Red:	0xff00
+	Green:	0xf900
+	Blue:	0x4000
+)
+
+(TClr.441
+	Red:	0xff00
+	Green:	0xec00
+	Blue:	0x4000
+)
+
+(TClr.442
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0x4000
+)
+
+(TClr.443
+	Red:	0xff00
+	Green:	0xc600
+	Blue:	0x4000
+)
+
+(TClr.444
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0x4000
+)
+
+(TClr.445
+	Red:	0xff00
+	Green:	0x9f00
+	Blue:	0x4000
+)
+
+(TClr.446
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0x4000
+)
+
+(TClr.447
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0x4000
+)
+
+(TClr.448
+	Red:	0xff00
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.449
+	Red:	0xf500
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.450
+	Red:	0xf500
+	Green:	0xec00
+	Blue:	0x4000
+)
+
+(TClr.451
+	Red:	0xf000
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.452
+	Red:	0xf000
+	Green:	0x6600
+	Blue:	0xe000
+)
+
+(TClr.453
+	Red:	0xf000
+	Green:	0x6600
+	Blue:	0xc200
+)
+
+(TClr.454
+	Red:	0xf000
+	Green:	0x6600
+	Blue:	0x9400
+)
+
+(TClr.455
+	Red:	0xf000
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.456
+	Red:	0xd900
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.457
+	Red:	0xd900
+	Green:	0x6600
+	Blue:	0xe000
+)
+
+(TClr.458
+	Red:	0xd900
+	Green:	0x6600
+	Blue:	0xc200
+)
+
+(TClr.459
+	Red:	0xd900
+	Green:	0x6600
+	Blue:	0xb300
+)
+
+(TClr.460
+	Red:	0xd900
+	Green:	0x6600
+	Blue:	0x8500
+)
+
+(TClr.461
+	Red:	0xc200
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.462
+	Red:	0xc200
+	Green:	0x6600
+	Blue:	0xe000
+)
+
+(TClr.463
+	Red:	0xc200
+	Green:	0x6600
+	Blue:	0xb300
+)
+
+(TClr.464
+	Red:	0xb300
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.465
+	Red:	0xb300
+	Green:	0x6600
+	Blue:	0xd100
+)
+
+(TClr.466
+	Red:	0xa300
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.467
+	Red:	0xa300
+	Green:	0x6600
+	Blue:	0xd100
+)
+
+(TClr.468
+	Red:	0x9400
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.469
+	Red:	0x7500
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.470
+	Red:	0x6600
+	Green:	0x6600
+	Blue:	0xff00
+)
+
+(TClr.471
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.472
+	Red:	0xff00
+	Green:	0xfa00
+	Blue:	0x6600
+)
+
+(TClr.473
+	Red:	0xff00
+	Green:	0xf000
+	Blue:	0x6600
+)
+
+(TClr.474
+	Red:	0xff00
+	Green:	0xe000
+	Blue:	0x6600
+)
+
+(TClr.475
+	Red:	0xff00
+	Green:	0xd100
+	Blue:	0x6600
+)
+
+(TClr.476
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.477
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0x6600
+)
+
+(TClr.478
+	Red:	0xff00
+	Green:	0xa300
+	Blue:	0x6600
+)
+
+(TClr.479
+	Red:	0xff00
+	Green:	0x8500
+	Blue:	0x6600
+)
+
+(TClr.480
+	Red:	0xff00
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.481
+	Red:	0xf700
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.482
+	Red:	0xf700
+	Green:	0xf000
+	Blue:	0x6600
+)
+
+(TClr.483
+	Red:	0xf400
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.484
+	Red:	0xf400
+	Green:	0x8c00
+	Blue:	0xe800
+)
+
+(TClr.485
+	Red:	0xf400
+	Green:	0x8c00
+	Blue:	0xd100
+)
+
+(TClr.486
+	Red:	0xf400
+	Green:	0x8c00
+	Blue:	0xaf00
+)
+
+(TClr.487
+	Red:	0xf400
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.488
+	Red:	0xe200
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.489
+	Red:	0xe200
+	Green:	0x8c00
+	Blue:	0xe800
+)
+
+(TClr.490
+	Red:	0xe200
+	Green:	0x8c00
+	Blue:	0xd100
+)
+
+(TClr.491
+	Red:	0xe200
+	Green:	0x8c00
+	Blue:	0xc600
+)
+
+(TClr.492
+	Red:	0xe200
+	Green:	0x8c00
+	Blue:	0xa300
+)
+
+(TClr.493
+	Red:	0xd100
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.494
+	Red:	0xd100
+	Green:	0x8c00
+	Blue:	0xe800
+)
+
+(TClr.495
+	Red:	0xd100
+	Green:	0x8c00
+	Blue:	0xc600
+)
+
+(TClr.496
+	Red:	0xc600
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.497
+	Red:	0xc600
+	Green:	0x8c00
+	Blue:	0xdd00
+)
+
+(TClr.498
+	Red:	0xba00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.499
+	Red:	0xba00
+	Green:	0x8c00
+	Blue:	0xdd00
+)
+
+(TClr.500
+	Red:	0xaf00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.501
+	Red:	0x9800
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.502
+	Red:	0x8c00
+	Green:	0x8c00
+	Blue:	0xff00
+)
+
+(TClr.503
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.504
+	Red:	0xff00
+	Green:	0xfc00
+	Blue:	0x8c00
+)
+
+(TClr.505
+	Red:	0xff00
+	Green:	0xf400
+	Blue:	0x8c00
+)
+
+(TClr.506
+	Red:	0xff00
+	Green:	0xe800
+	Blue:	0x8c00
+)
+
+(TClr.507
+	Red:	0xff00
+	Green:	0xdd00
+	Blue:	0x8c00
+)
+
+(TClr.508
+	Red:	0xff00
+	Green:	0xd100
+	Blue:	0x8c00
+)
+
+(TClr.509
+	Red:	0xff00
+	Green:	0xc600
+	Blue:	0x8c00
+)
+
+(TClr.510
+	Red:	0xff00
+	Green:	0xba00
+	Blue:	0x8c00
+)
+
+(TClr.511
+	Red:	0xff00
+	Green:	0xa300
+	Blue:	0x8c00
+)
+
+(TClr.512
+	Red:	0xff00
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.513
+	Red:	0xf900
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.514
+	Red:	0xf900
+	Green:	0xf400
+	Blue:	0x8c00
+)
+
+(TClr.515
+	Red:	0xf700
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.516
+	Red:	0xf700
+	Green:	0xb300
+	Blue:	0xf000
+)
+
+(TClr.517
+	Red:	0xf700
+	Green:	0xb300
+	Blue:	0xe000
+)
+
+(TClr.518
+	Red:	0xf700
+	Green:	0xb300
+	Blue:	0xc900
+)
+
+(TClr.519
+	Red:	0xf700
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.520
+	Red:	0xec00
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.521
+	Red:	0xec00
+	Green:	0xb300
+	Blue:	0xf000
+)
+
+(TClr.522
+	Red:	0xec00
+	Green:	0xb300
+	Blue:	0xe000
+)
+
+(TClr.523
+	Red:	0xec00
+	Green:	0xb300
+	Blue:	0xd900
+)
+
+(TClr.524
+	Red:	0xec00
+	Green:	0xb300
+	Blue:	0xc200
+)
+
+(TClr.525
+	Red:	0xe000
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.526
+	Red:	0xe000
+	Green:	0xb300
+	Blue:	0xf000
+)
+
+(TClr.527
+	Red:	0xe000
+	Green:	0xb300
+	Blue:	0xd900
+)
+
+(TClr.528
+	Red:	0xd900
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.529
+	Red:	0xd900
+	Green:	0xb300
+	Blue:	0xe800
+)
+
+(TClr.530
+	Red:	0xd100
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.531
+	Red:	0xd100
+	Green:	0xb300
+	Blue:	0xe800
+)
+
+(TClr.532
+	Red:	0xc900
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.533
+	Red:	0xba00
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.534
+	Red:	0xb300
+	Green:	0xb300
+	Blue:	0xff00
+)
+
+(TClr.535
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.536
+	Red:	0xff00
+	Green:	0xfd00
+	Blue:	0xb300
+)
+
+(TClr.537
+	Red:	0xff00
+	Green:	0xf700
+	Blue:	0xb300
+)
+
+(TClr.538
+	Red:	0xff00
+	Green:	0xf000
+	Blue:	0xb300
+)
+
+(TClr.539
+	Red:	0xff00
+	Green:	0xe800
+	Blue:	0xb300
+)
+
+(TClr.540
+	Red:	0xff00
+	Green:	0xe000
+	Blue:	0xb300
+)
+
+(TClr.541
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0xb300
+)
+
+(TClr.542
+	Red:	0xff00
+	Green:	0xd100
+	Blue:	0xb300
+)
+
+(TClr.543
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0xb300
+)
+
+(TClr.544
+	Red:	0xff00
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.545
+	Red:	0xfb00
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.546
+	Red:	0xfb00
+	Green:	0xf700
+	Blue:	0xb300
+)
+
+(TClr.547
+	Red:	0xfb00
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.548
+	Red:	0xfb00
+	Green:	0xd900
+	Blue:	0xf700
+)
+
+(TClr.549
+	Red:	0xfb00
+	Green:	0xd900
+	Blue:	0xf000
+)
+
+(TClr.550
+	Red:	0xfb00
+	Green:	0xd900
+	Blue:	0xe400
+)
+
+(TClr.551
+	Red:	0xfb00
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.552
+	Red:	0xf500
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.553
+	Red:	0xf500
+	Green:	0xd900
+	Blue:	0xf700
+)
+
+(TClr.554
+	Red:	0xf500
+	Green:	0xd900
+	Blue:	0xf000
+)
+
+(TClr.555
+	Red:	0xf500
+	Green:	0xd900
+	Blue:	0xec00
+)
+
+(TClr.556
+	Red:	0xf500
+	Green:	0xd900
+	Blue:	0xe000
+)
+
+(TClr.557
+	Red:	0xf000
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.558
+	Red:	0xf000
+	Green:	0xd900
+	Blue:	0xf700
+)
+
+(TClr.559
+	Red:	0xf000
+	Green:	0xd900
+	Blue:	0xec00
+)
+
+(TClr.560
+	Red:	0xec00
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.561
+	Red:	0xec00
+	Green:	0xd900
+	Blue:	0xf400
+)
+
+(TClr.562
+	Red:	0xe800
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.563
+	Red:	0xe800
+	Green:	0xd900
+	Blue:	0xf400
+)
+
+(TClr.564
+	Red:	0xe400
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.565
+	Red:	0xdd00
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.566
+	Red:	0xd900
+	Green:	0xd900
+	Blue:	0xff00
+)
+
+(TClr.567
+	Red:	0xff00
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.568
+	Red:	0xff00
+	Green:	0xfe00
+	Blue:	0xd900
+)
+
+(TClr.569
+	Red:	0xff00
+	Green:	0xfb00
+	Blue:	0xd900
+)
+
+(TClr.570
+	Red:	0xff00
+	Green:	0xf700
+	Blue:	0xd900
+)
+
+(TClr.571
+	Red:	0xff00
+	Green:	0xf400
+	Blue:	0xd900
+)
+
+(TClr.572
+	Red:	0xff00
+	Green:	0xf000
+	Blue:	0xd900
+)
+
+(TClr.573
+	Red:	0xff00
+	Green:	0xec00
+	Blue:	0xd900
+)
+
+(TClr.574
+	Red:	0xff00
+	Green:	0xe800
+	Blue:	0xd900
+)
+
+(TClr.575
+	Red:	0xff00
+	Green:	0xe000
+	Blue:	0xd900
+)
+
+(TClr.576
+	Red:	0xff00
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.577
+	Red:	0xfd00
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.578
+	Red:	0xfd00
+	Green:	0xfb00
+	Blue:	0xd900
+)
+
+(TClr.579
+	Red:	0xf200
+	Green:	0xcc00
+)
+
+(TClr.580
+	Red:	0xf200
+	Green:	0xb300
+)
+
+(TClr.581
+	Red:	0xf200
+	Green:	0x9900
+)
+
+(TClr.582
+	Red:	0xf200
+	Green:	0x8000
+)
+
+(TClr.583
+	Red:	0xf200
+	Green:	0x6600
+)
+
+(TClr.584
+	Red:	0xf200
+	Green:	0x4d00
+)
+
+(TClr.585
+	Red:	0xf200
+	Green:	0x2600
+)
+
+(TClr.586
+	Red:	0xf200
+)
+
+(TClr.587
+	Red:	0xe600
+	Green:	0xff00
+)
+
+(TClr.588
+	Red:	0xe600
+	Green:	0xe600
+)
+
+(TClr.589
+	Red:	0xe600
+	Green:	0xcc00
+)
+
+(TClr.590
+	Red:	0xe600
+	Green:	0xb300
+)
+
+(TClr.591
+	Red:	0xe600
+	Green:	0x9900
+)
+
+(TClr.592
+	Red:	0xe600
+	Green:	0x8000
+)
+
+(TClr.593
+	Red:	0xe600
+	Green:	0x6600
+)
+
+(TClr.594
+	Red:	0xe600
+	Green:	0x4d00
+)
+
+(TClr.595
+	Red:	0xe600
+	Green:	0x2600
+)
+
+(TClr.596
+	Red:	0xe600
+)
+
+(TClr.597
+	Red:	0xcc00
+	Green:	0xff00
+)
+
+(TClr.598
+	Red:	0xcc00
+	Green:	0xcc00
+)
+
+(TClr.599
+	Red:	0xcc00
+	Green:	0xb300
+)
+
+(TClr.600
+	Red:	0xcc00
+	Green:	0x9900
+)
+
+(TClr.601
+	Red:	0xcc00
+	Green:	0x8c00
+)
+
+(TClr.602
+	Red:	0xcc00
+	Green:	0x8000
+)
+
+(TClr.603
+	Red:	0xcc00
+	Green:	0x6600
+)
+
+(TClr.604
+	Red:	0xcc00
+	Green:	0x4d00
+)
+
+(TClr.605
+	Red:	0xcc00
+	Green:	0x2600
+)
+
+(TClr.606
+	Red:	0xcc00
+)
+
+(TClr.607
+	Red:	0xb300
+	Green:	0xff00
+)
+
+(TClr.608
+	Red:	0xb300
+	Green:	0xbf00
+)
+
+(TClr.609
+	Red:	0xb300
+	Green:	0x9900
+)
+
+(TClr.610
+	Red:	0xb300
+	Green:	0x8000
+)
+
+(TClr.611
+	Red:	0xf500
+	Green:	0xd900
+	Blue:	0x4000
+)
+
+(TClr.612
+	Red:	0xf500
+	Green:	0xc600
+	Blue:	0x4000
+)
+
+(TClr.613
+	Red:	0xf500
+	Green:	0xb300
+	Blue:	0x4000
+)
+
+(TClr.614
+	Red:	0xf500
+	Green:	0x9f00
+	Blue:	0x4000
+)
+
+(TClr.615
+	Red:	0xf500
+	Green:	0x8c00
+	Blue:	0x4000
+)
+
+(TClr.616
+	Red:	0xf500
+	Green:	0x7900
+	Blue:	0x4000
+)
+
+(TClr.617
+	Red:	0xf500
+	Green:	0x5c00
+	Blue:	0x4000
+)
+
+(TClr.618
+	Red:	0xf500
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.619
+	Red:	0xec00
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.620
+	Red:	0xec00
+	Green:	0xec00
+	Blue:	0x4000
+)
+
+(TClr.621
+	Red:	0xec00
+	Green:	0xd900
+	Blue:	0x4000
+)
+
+(TClr.622
+	Red:	0xec00
+	Green:	0xc600
+	Blue:	0x4000
+)
+
+(TClr.623
+	Red:	0xec00
+	Green:	0xb300
+	Blue:	0x4000
+)
+
+(TClr.624
+	Red:	0xec00
+	Green:	0x9f00
+	Blue:	0x4000
+)
+
+(TClr.625
+	Red:	0xec00
+	Green:	0x8c00
+	Blue:	0x4000
+)
+
+(TClr.626
+	Red:	0xec00
+	Green:	0x7900
+	Blue:	0x4000
+)
+
+(TClr.627
+	Red:	0xec00
+	Green:	0x5c00
+	Blue:	0x4000
+)
+
+(TClr.628
+	Red:	0xec00
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.629
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0x4d00
+)
+
+(TClr.630
+	Red:	0xd900
+	Green:	0xd900
+	Blue:	0x4000
+)
+
+(TClr.631
+	Red:	0xd900
+	Green:	0xc600
+	Blue:	0x4000
+)
+
+(TClr.632
+	Red:	0xd900
+	Green:	0xb300
+	Blue:	0x4000
+)
+
+(TClr.633
+	Red:	0xd900
+	Green:	0xa900
+	Blue:	0x4000
+)
+
+(TClr.634
+	Red:	0xd900
+	Green:	0x9f00
+	Blue:	0x4000
+)
+
+(TClr.635
+	Red:	0xd900
+	Green:	0x8c00
+	Blue:	0x4000
+)
+
+(TClr.636
+	Red:	0xd900
+	Green:	0x7900
+	Blue:	0x4000
+)
+
+(TClr.637
+	Red:	0xd900
+	Green:	0x5c00
+	Blue:	0x4000
+)
+
+(TClr.638
+	Red:	0xd900
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.639
+	Red:	0xc600
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.640
+	Red:	0xc600
+	Green:	0xcf00
+	Blue:	0x4000
+)
+
+(TClr.641
+	Red:	0xc600
+	Green:	0xb300
+	Blue:	0x4000
+)
+
+(TClr.642
+	Red:	0xc600
+	Green:	0x9f00
+	Blue:	0x4000
+)
+
+(TClr.643
+	Red:	0xf700
+	Green:	0xe000
+	Blue:	0x6600
+)
+
+(TClr.644
+	Red:	0xf700
+	Green:	0xd100
+	Blue:	0x6600
+)
+
+(TClr.645
+	Red:	0xf700
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.646
+	Red:	0xf700
+	Green:	0xb300
+	Blue:	0x6600
+)
+
+(TClr.647
+	Red:	0xf700
+	Green:	0xa300
+	Blue:	0x6600
+)
+
+(TClr.648
+	Red:	0xf700
+	Green:	0x9400
+	Blue:	0x6600
+)
+
+(TClr.649
+	Red:	0xf700
+	Green:	0x7d00
+	Blue:	0x6600
+)
+
+(TClr.650
+	Red:	0xf700
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.651
+	Red:	0xf000
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.652
+	Red:	0xf000
+	Green:	0xf000
+	Blue:	0x6600
+)
+
+(TClr.653
+	Red:	0xf000
+	Green:	0xe000
+	Blue:	0x6600
+)
+
+(TClr.654
+	Red:	0xf000
+	Green:	0xd100
+	Blue:	0x6600
+)
+
+(TClr.655
+	Red:	0xf000
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.656
+	Red:	0xf000
+	Green:	0xb300
+	Blue:	0x6600
+)
+
+(TClr.657
+	Red:	0xf000
+	Green:	0xa300
+	Blue:	0x6600
+)
+
+(TClr.658
+	Red:	0xf000
+	Green:	0x9400
+	Blue:	0x6600
+)
+
+(TClr.659
+	Red:	0xf000
+	Green:	0x7d00
+	Blue:	0x6600
+)
+
+(TClr.660
+	Red:	0xf000
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.661
+	Red:	0xe000
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.662
+	Red:	0xe000
+	Green:	0xe000
+	Blue:	0x6600
+)
+
+(TClr.663
+	Red:	0xe000
+	Green:	0xd100
+	Blue:	0x6600
+)
+
+(TClr.664
+	Red:	0xe000
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.665
+	Red:	0xe000
+	Green:	0xba00
+	Blue:	0x6600
+)
+
+(TClr.666
+	Red:	0xe000
+	Green:	0xb300
+	Blue:	0x6600
+)
+
+(TClr.667
+	Red:	0xe000
+	Green:	0xa300
+	Blue:	0x6600
+)
+
+(TClr.668
+	Red:	0xe000
+	Green:	0x9400
+	Blue:	0x6600
+)
+
+(TClr.669
+	Red:	0xe000
+	Green:	0x7d00
+	Blue:	0x6600
+)
+
+(TClr.670
+	Red:	0xe000
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.671
+	Red:	0xd100
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.672
+	Red:	0xd100
+	Green:	0xd900
+	Blue:	0x6600
+)
+
+(TClr.673
+	Red:	0xd100
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.674
+	Red:	0xd100
+	Green:	0xb300
+	Blue:	0x6600
+)
+
+(TClr.675
+	Red:	0xf900
+	Green:	0xe800
+	Blue:	0x8c00
+)
+
+(TClr.676
+	Red:	0xf900
+	Green:	0xdd00
+	Blue:	0x8c00
+)
+
+(TClr.677
+	Red:	0xf900
+	Green:	0xd100
+	Blue:	0x8c00
+)
+
+(TClr.678
+	Red:	0xf900
+	Green:	0xc600
+	Blue:	0x8c00
+)
+
+(TClr.679
+	Red:	0xf900
+	Green:	0xba00
+	Blue:	0x8c00
+)
+
+(TClr.680
+	Red:	0xf900
+	Green:	0xaf00
+	Blue:	0x8c00
+)
+
+(TClr.681
+	Red:	0xf900
+	Green:	0x9d00
+	Blue:	0x8c00
+)
+
+(TClr.682
+	Red:	0xf900
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.683
+	Red:	0xf400
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.684
+	Red:	0xf400
+	Green:	0xf400
+	Blue:	0x8c00
+)
+
+(TClr.685
+	Red:	0xf400
+	Green:	0xe800
+	Blue:	0x8c00
+)
+
+(TClr.686
+	Red:	0xf400
+	Green:	0xdd00
+	Blue:	0x8c00
+)
+
+(TClr.687
+	Red:	0xf400
+	Green:	0xd100
+	Blue:	0x8c00
+)
+
+(TClr.688
+	Red:	0xf400
+	Green:	0xc600
+	Blue:	0x8c00
+)
+
+(TClr.689
+	Red:	0xf400
+	Green:	0xba00
+	Blue:	0x8c00
+)
+
+(TClr.690
+	Red:	0xf400
+	Green:	0xaf00
+	Blue:	0x8c00
+)
+
+(TClr.691
+	Red:	0xf400
+	Green:	0x9d00
+	Blue:	0x8c00
+)
+
+(TClr.692
+	Red:	0xf400
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.693
+	Red:	0xe800
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.694
+	Red:	0xe800
+	Green:	0xe800
+	Blue:	0x8c00
+)
+
+(TClr.695
+	Red:	0xe800
+	Green:	0xdd00
+	Blue:	0x8c00
+)
+
+(TClr.696
+	Red:	0xe800
+	Green:	0xd100
+	Blue:	0x8c00
+)
+
+(TClr.697
+	Red:	0xe800
+	Green:	0xcb00
+	Blue:	0x8c00
+)
+
+(TClr.698
+	Red:	0xe800
+	Green:	0xc600
+	Blue:	0x8c00
+)
+
+(TClr.699
+	Red:	0xe800
+	Green:	0xba00
+	Blue:	0x8c00
+)
+
+(TClr.700
+	Red:	0xe800
+	Green:	0xaf00
+	Blue:	0x8c00
+)
+
+(TClr.701
+	Red:	0xe800
+	Green:	0x9d00
+	Blue:	0x8c00
+)
+
+(TClr.702
+	Red:	0xe800
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.703
+	Red:	0xdd00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.704
+	Red:	0xdd00
+	Green:	0xe200
+	Blue:	0x8c00
+)
+
+(TClr.705
+	Red:	0xdd00
+	Green:	0xd100
+	Blue:	0x8c00
+)
+
+(TClr.706
+	Red:	0xdd00
+	Green:	0xc600
+	Blue:	0x8c00
+)
+
+(TClr.707
+	Red:	0xfb00
+	Green:	0xf000
+	Blue:	0xb300
+)
+
+(TClr.708
+	Red:	0xfb00
+	Green:	0xe800
+	Blue:	0xb300
+)
+
+(TClr.709
+	Red:	0xfb00
+	Green:	0xe000
+	Blue:	0xb300
+)
+
+(TClr.710
+	Red:	0xfb00
+	Green:	0xd900
+	Blue:	0xb300
+)
+
+(TClr.711
+	Red:	0xfb00
+	Green:	0xd100
+	Blue:	0xb300
+)
+
+(TClr.712
+	Red:	0xfb00
+	Green:	0xc900
+	Blue:	0xb300
+)
+
+(TClr.713
+	Red:	0xfb00
+	Green:	0xbe00
+	Blue:	0xb300
+)
+
+(TClr.714
+	Red:	0xfb00
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.715
+	Red:	0xf700
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.716
+	Red:	0xf700
+	Green:	0xf700
+	Blue:	0xb300
+)
+
+(TClr.717
+	Red:	0xf700
+	Green:	0xf000
+	Blue:	0xb300
+)
+
+(TClr.718
+	Red:	0xf700
+	Green:	0xe800
+	Blue:	0xb300
+)
+
+(TClr.719
+	Red:	0xf700
+	Green:	0xe000
+	Blue:	0xb300
+)
+
+(TClr.720
+	Red:	0xf700
+	Green:	0xd900
+	Blue:	0xb300
+)
+
+(TClr.721
+	Red:	0xf700
+	Green:	0xd100
+	Blue:	0xb300
+)
+
+(TClr.722
+	Red:	0xf700
+	Green:	0xc900
+	Blue:	0xb300
+)
+
+(TClr.723
+	Red:	0xf700
+	Green:	0xbe00
+	Blue:	0xb300
+)
+
+(TClr.724
+	Red:	0xf700
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.725
+	Red:	0xf000
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.726
+	Red:	0xf000
+	Green:	0xf000
+	Blue:	0xb300
+)
+
+(TClr.727
+	Red:	0xf000
+	Green:	0xe800
+	Blue:	0xb300
+)
+
+(TClr.728
+	Red:	0xf000
+	Green:	0xe000
+	Blue:	0xb300
+)
+
+(TClr.729
+	Red:	0xf000
+	Green:	0xdd00
+	Blue:	0xb300
+)
+
+(TClr.730
+	Red:	0xf000
+	Green:	0xd900
+	Blue:	0xb300
+)
+
+(TClr.731
+	Red:	0xf000
+	Green:	0xd100
+	Blue:	0xb300
+)
+
+(TClr.732
+	Red:	0xf000
+	Green:	0xc900
+	Blue:	0xb300
+)
+
+(TClr.733
+	Red:	0xf000
+	Green:	0xbe00
+	Blue:	0xb300
+)
+
+(TClr.734
+	Red:	0xf000
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.735
+	Red:	0xe800
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.736
+	Red:	0xe800
+	Green:	0xec00
+	Blue:	0xb300
+)
+
+(TClr.737
+	Red:	0xe800
+	Green:	0xe000
+	Blue:	0xb300
+)
+
+(TClr.738
+	Red:	0xe800
+	Green:	0xd900
+	Blue:	0xb300
+)
+
+(TClr.739
+	Red:	0xfd00
+	Green:	0xf700
+	Blue:	0xd900
+)
+
+(TClr.740
+	Red:	0xfd00
+	Green:	0xf400
+	Blue:	0xd900
+)
+
+(TClr.741
+	Red:	0xfd00
+	Green:	0xf000
+	Blue:	0xd900
+)
+
+(TClr.742
+	Red:	0xfd00
+	Green:	0xec00
+	Blue:	0xd900
+)
+
+(TClr.743
+	Red:	0xfd00
+	Green:	0xe800
+	Blue:	0xd900
+)
+
+(TClr.744
+	Red:	0xfd00
+	Green:	0xe400
+	Blue:	0xd900
+)
+
+(TClr.745
+	Red:	0xfd00
+	Green:	0xde00
+	Blue:	0xd900
+)
+
+(TClr.746
+	Red:	0xfd00
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.747
+	Red:	0xfb00
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.748
+	Red:	0xfb00
+	Green:	0xfb00
+	Blue:	0xd900
+)
+
+(TClr.749
+	Red:	0xfb00
+	Green:	0xf700
+	Blue:	0xd900
+)
+
+(TClr.750
+	Red:	0xfb00
+	Green:	0xf400
+	Blue:	0xd900
+)
+
+(TClr.751
+	Red:	0xfb00
+	Green:	0xf000
+	Blue:	0xd900
+)
+
+(TClr.752
+	Red:	0xfb00
+	Green:	0xec00
+	Blue:	0xd900
+)
+
+(TClr.753
+	Red:	0xfb00
+	Green:	0xe800
+	Blue:	0xd900
+)
+
+(TClr.754
+	Red:	0xfb00
+	Green:	0xe400
+	Blue:	0xd900
+)
+
+(TClr.755
+	Red:	0xfb00
+	Green:	0xde00
+	Blue:	0xd900
+)
+
+(TClr.756
+	Red:	0xfb00
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.757
+	Red:	0xf700
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.758
+	Red:	0xf700
+	Green:	0xf700
+	Blue:	0xd900
+)
+
+(TClr.759
+	Red:	0xf700
+	Green:	0xf400
+	Blue:	0xd900
+)
+
+(TClr.760
+	Red:	0xf700
+	Green:	0xf000
+	Blue:	0xd900
+)
+
+(TClr.761
+	Red:	0xf700
+	Green:	0xee00
+	Blue:	0xd900
+)
+
+(TClr.762
+	Red:	0xf700
+	Green:	0xec00
+	Blue:	0xd900
+)
+
+(TClr.763
+	Red:	0xf700
+	Green:	0xe800
+	Blue:	0xd900
+)
+
+(TClr.764
+	Red:	0xf700
+	Green:	0xe400
+	Blue:	0xd900
+)
+
+(TClr.765
+	Red:	0xf700
+	Green:	0xde00
+	Blue:	0xd900
+)
+
+(TClr.766
+	Red:	0xf700
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.767
+	Red:	0xf400
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.768
+	Red:	0xf400
+	Green:	0xf500
+	Blue:	0xd900
+)
+
+(TClr.769
+	Red:	0xf400
+	Green:	0xf000
+	Blue:	0xd900
+)
+
+(TClr.770
+	Red:	0xf400
+	Green:	0xec00
+	Blue:	0xd900
+)
+
+(TClr.771
+	Red:	0xb300
+	Green:	0x6600
+)
+
+(TClr.772
+	Red:	0xb300
+	Green:	0x4d00
+)
+
+(TClr.773
+	Red:	0xb300
+	Green:	0x3300
+)
+
+(TClr.774
+	Red:	0xb300
+	Green:	0x1a00
+)
+
+(TClr.775
+	Red:	0xb300
+)
+
+(TClr.776
+	Red:	0x9900
+	Green:	0xff00
+)
+
+(TClr.777
+	Red:	0x9900
+	Green:	0xd900
+)
+
+(TClr.778
+	Red:	0x9900
+	Green:	0x9900
+)
+
+(TClr.779
+	Red:	0x9900
+	Green:	0x8000
+)
+
+(TClr.780
+	Red:	0x9900
+	Green:	0x6600
+)
+
+(TClr.781
+	Red:	0x9900
+	Green:	0x4d00
+)
+
+(TClr.782
+	Red:	0x9900
+	Green:	0x2600
+)
+
+(TClr.783
+	Red:	0x9900
+)
+
+(TClr.784
+	Red:	0x8000
+	Green:	0xcc00
+)
+
+(TClr.785
+	Red:	0x6600
+	Green:	0xcc00
+)
+
+(TClr.786
+	Red:	0x4d00
+	Green:	0xcc00
+)
+
+(TClr.787
+	Red:	0x8000
+	Green:	0xff00
+)
+
+(TClr.788
+	Red:	0x6600
+	Green:	0xff00
+)
+
+(TClr.789
+	Red:	0x4d00
+	Green:	0xff00
+)
+
+(TClr.790
+	Red:	0x3300
+	Green:	0xff00
+)
+
+(TClr.791
+	Red:	0x1a00
+	Green:	0xff00
+)
+
+(TClr.792
+	Green:	0xff00
+)
+
+(TClr.793
+	Red:	0xc600
+	Green:	0x8c00
+	Blue:	0x4000
+)
+
+(TClr.794
+	Red:	0xc600
+	Green:	0x7900
+	Blue:	0x4000
+)
+
+(TClr.795
+	Red:	0xc600
+	Green:	0x6600
+	Blue:	0x4000
+)
+
+(TClr.796
+	Red:	0xc600
+	Green:	0x5300
+	Blue:	0x4000
+)
+
+(TClr.797
+	Red:	0xc600
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.798
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.799
+	Red:	0xb300
+	Green:	0xe200
+	Blue:	0x4000
+)
+
+(TClr.800
+	Red:	0xb300
+	Green:	0xb300
+	Blue:	0x4000
+)
+
+(TClr.801
+	Red:	0xb300
+	Green:	0x9f00
+	Blue:	0x4000
+)
+
+(TClr.802
+	Red:	0xb300
+	Green:	0x8c00
+	Blue:	0x4000
+)
+
+(TClr.803
+	Red:	0xb300
+	Green:	0x7900
+	Blue:	0x4000
+)
+
+(TClr.804
+	Red:	0xb300
+	Green:	0x5c00
+	Blue:	0x4000
+)
+
+(TClr.805
+	Red:	0xb300
+	Green:	0x4000
+	Blue:	0x4000
+)
+
+(TClr.806
+	Red:	0x9f00
+	Green:	0xd900
+	Blue:	0x4000
+)
+
+(TClr.807
+	Red:	0x8c00
+	Green:	0xd900
+	Blue:	0x4000
+)
+
+(TClr.808
+	Red:	0x7900
+	Green:	0xd900
+	Blue:	0x4000
+)
+
+(TClr.809
+	Red:	0x9f00
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.810
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.811
+	Red:	0x7900
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.812
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.813
+	Red:	0x5300
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.814
+	Red:	0x4000
+	Green:	0xff00
+	Blue:	0x4000
+)
+
+(TClr.815
+	Red:	0xd100
+	Green:	0xa300
+	Blue:	0x6600
+)
+
+(TClr.816
+	Red:	0xd100
+	Green:	0x9400
+	Blue:	0x6600
+)
+
+(TClr.817
+	Red:	0xd100
+	Green:	0x8500
+	Blue:	0x6600
+)
+
+(TClr.818
+	Red:	0xd100
+	Green:	0x7500
+	Blue:	0x6600
+)
+
+(TClr.819
+	Red:	0xd100
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.820
+	Red:	0xc200
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.821
+	Red:	0xc200
+	Green:	0xe800
+	Blue:	0x6600
+)
+
+(TClr.822
+	Red:	0xc200
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.823
+	Red:	0xc200
+	Green:	0xb300
+	Blue:	0x6600
+)
+
+(TClr.824
+	Red:	0xc200
+	Green:	0xa300
+	Blue:	0x6600
+)
+
+(TClr.825
+	Red:	0xc200
+	Green:	0x9400
+	Blue:	0x6600
+)
+
+(TClr.826
+	Red:	0xc200
+	Green:	0x7d00
+	Blue:	0x6600
+)
+
+(TClr.827
+	Red:	0xc200
+	Green:	0x6600
+	Blue:	0x6600
+)
+
+(TClr.828
+	Red:	0xb300
+	Green:	0xe000
+	Blue:	0x6600
+)
+
+(TClr.829
+	Red:	0xa300
+	Green:	0xe000
+	Blue:	0x6600
+)
+
+(TClr.830
+	Red:	0x9400
+	Green:	0xe000
+	Blue:	0x6600
+)
+
+(TClr.831
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.832
+	Red:	0xa300
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.833
+	Red:	0x9400
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.834
+	Red:	0x8500
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.835
+	Red:	0x7500
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.836
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0x6600
+)
+
+(TClr.837
+	Red:	0xdd00
+	Green:	0xba00
+	Blue:	0x8c00
+)
+
+(TClr.838
+	Red:	0xdd00
+	Green:	0xaf00
+	Blue:	0x8c00
+)
+
+(TClr.839
+	Red:	0xdd00
+	Green:	0xa300
+	Blue:	0x8c00
+)
+
+(TClr.840
+	Red:	0xdd00
+	Green:	0x9800
+	Blue:	0x8c00
+)
+
+(TClr.841
+	Red:	0xdd00
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.842
+	Red:	0xd100
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.843
+	Red:	0xd100
+	Green:	0xee00
+	Blue:	0x8c00
+)
+
+(TClr.844
+	Red:	0xd100
+	Green:	0xd100
+	Blue:	0x8c00
+)
+
+(TClr.845
+	Red:	0xd100
+	Green:	0xc600
+	Blue:	0x8c00
+)
+
+(TClr.846
+	Red:	0xd100
+	Green:	0xba00
+	Blue:	0x8c00
+)
+
+(TClr.847
+	Red:	0xd100
+	Green:	0xaf00
+	Blue:	0x8c00
+)
+
+(TClr.848
+	Red:	0xd100
+	Green:	0x9d00
+	Blue:	0x8c00
+)
+
+(TClr.849
+	Red:	0xd100
+	Green:	0x8c00
+	Blue:	0x8c00
+)
+
+(TClr.850
+	Red:	0xc600
+	Green:	0xe800
+	Blue:	0x8c00
+)
+
+(TClr.851
+	Red:	0xba00
+	Green:	0xe800
+	Blue:	0x8c00
+)
+
+(TClr.852
+	Red:	0xaf00
+	Green:	0xe800
+	Blue:	0x8c00
+)
+
+(TClr.853
+	Red:	0xc600
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.854
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.855
+	Red:	0xaf00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.856
+	Red:	0xa300
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.857
+	Red:	0x9800
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.858
+	Red:	0x8c00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.859
+	Red:	0xe800
+	Green:	0xd100
+	Blue:	0xb300
+)
+
+(TClr.860
+	Red:	0xe800
+	Green:	0xc900
+	Blue:	0xb300
+)
+
+(TClr.861
+	Red:	0xe800
+	Green:	0xc200
+	Blue:	0xb300
+)
+
+(TClr.862
+	Red:	0xe800
+	Green:	0xba00
+	Blue:	0xb300
+)
+
+(TClr.863
+	Red:	0xe800
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.864
+	Red:	0xe000
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.865
+	Red:	0xe000
+	Green:	0xf400
+	Blue:	0xb300
+)
+
+(TClr.866
+	Red:	0xe000
+	Green:	0xe000
+	Blue:	0xb300
+)
+
+(TClr.867
+	Red:	0xe000
+	Green:	0xd900
+	Blue:	0xb300
+)
+
+(TClr.868
+	Red:	0xe000
+	Green:	0xd100
+	Blue:	0xb300
+)
+
+(TClr.869
+	Red:	0xe000
+	Green:	0xc900
+	Blue:	0xb300
+)
+
+(TClr.870
+	Red:	0xe000
+	Green:	0xbe00
+	Blue:	0xb300
+)
+
+(TClr.871
+	Red:	0xe000
+	Green:	0xb300
+	Blue:	0xb300
+)
+
+(TClr.872
+	Red:	0xd900
+	Green:	0xf000
+	Blue:	0xb300
+)
+
+(TClr.873
+	Red:	0xd100
+	Green:	0xf000
+	Blue:	0xb300
+)
+
+(TClr.874
+	Red:	0xc900
+	Green:	0xf000
+	Blue:	0xb300
+)
+
+(TClr.875
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.876
+	Red:	0xd100
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.877
+	Red:	0xc900
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.878
+	Red:	0xc200
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.879
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.880
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xb300
+)
+
+(TClr.881
+	Red:	0xf400
+	Green:	0xe800
+	Blue:	0xd900
+)
+
+(TClr.882
+	Red:	0xf400
+	Green:	0xe400
+	Blue:	0xd900
+)
+
+(TClr.883
+	Red:	0xf400
+	Green:	0xe000
+	Blue:	0xd900
+)
+
+(TClr.884
+	Red:	0xf400
+	Green:	0xdd00
+	Blue:	0xd900
+)
+
+(TClr.885
+	Red:	0xf400
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.886
+	Red:	0xf000
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.887
+	Red:	0xf000
+	Green:	0xf900
+	Blue:	0xd900
+)
+
+(TClr.888
+	Red:	0xf000
+	Green:	0xf000
+	Blue:	0xd900
+)
+
+(TClr.889
+	Red:	0xf000
+	Green:	0xec00
+	Blue:	0xd900
+)
+
+(TClr.890
+	Red:	0xf000
+	Green:	0xe800
+	Blue:	0xd900
+)
+
+(TClr.891
+	Red:	0xf000
+	Green:	0xe400
+	Blue:	0xd900
+)
+
+(TClr.892
+	Red:	0xf000
+	Green:	0xde00
+	Blue:	0xd900
+)
+
+(TClr.893
+	Red:	0xf000
+	Green:	0xd900
+	Blue:	0xd900
+)
+
+(TClr.894
+	Red:	0xec00
+	Green:	0xf700
+	Blue:	0xd900
+)
+
+(TClr.895
+	Red:	0xe800
+	Green:	0xf700
+	Blue:	0xd900
+)
+
+(TClr.896
+	Red:	0xe400
+	Green:	0xf700
+	Blue:	0xd900
+)
+
+(TClr.897
+	Red:	0xec00
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.898
+	Red:	0xe800
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.899
+	Red:	0xe400
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.900
+	Red:	0xe000
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.901
+	Red:	0xdd00
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.902
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0xd900
+)
+
+(TClr.903
+	Red:	0xb300
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.904
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.905
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.906
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.907
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.908
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.909
+	Red:	0xff00
+	Green:	0xe300
+)
+
+(TClr.910
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.911
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.912
+	Red:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.913
+	Red:	0xff00
+	Green:	0xe000
+	Blue:	0xb300
+)
+
+(TClr.914
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.915
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.916
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.917
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.918
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.919
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.920
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.921
+	Red:	0xff00
+	Green:	0xc200
+	Blue:	0x6600
+)
+
+(TClr.922
+	Red:	0xcc00
+	Green:	0x1a00
+)
+
+(TClr.923
+	Red:	0x8000
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.924
+	Red:	0xd100
+	Green:	0xff00
+	Blue:	0xba00
+)
+
+(TClr.925
+	Red:	0xd900
+	Green:	0xff00
+	Blue:	0x4d00
+)
+
+(TClr.926
+	Red:	0xc200
+	Green:	0xa300
+	Blue:	0x6600
+)
+
+(TClr.927
+	Red:	0xba00
+	Green:	0xff00
+	Blue:	0x8c00
+)
+
+(TClr.928
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0xff00
+)
+
+(TClr.929
+	Green:	0xff00
+	Blue:	0x7d00
+)
+
+(TClr.930
+	Red:	0xcb00
+	Green:	0xde00
+	Blue:	0x6b00
+)
+
+(TClr.931
+	Red:	0xb300
+	Green:	0xff00
+)
+
+(TClr.932
+	Red:	0x6600
+	Green:	0xff00
+	Blue:	0x8000
+)
+
+(TClr.933
+)
+
+(TClr.934
+	Red:	0xff00
+)
+
+(TClr.935
+)
+
