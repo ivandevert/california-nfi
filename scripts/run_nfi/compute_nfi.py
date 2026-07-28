@@ -239,25 +239,30 @@ print(f"Done. Shape: {spectra_mmap.shape}. ({time.time()-t0:.2f}s)")
 # # assert len(unique_event_names) == len(change_inds), 'uh oh'
 
 # diffs = np.diff(np.append(change_inds, len(event_names)))
-df_event_names = set(eq_df["event_name"].values)
 
-print("building inds array")
+
+# ----------------------------------------------------------------
+# Keep only records whose event is in the catalog, then (optionally)
+# filter by channel. Row order is preserved, so all arrays stay aligned.
+# ----------------------------------------------------------------
+t0 = time.time()
+print("Selecting records present in the event catalog...", end="")
+
+df_event_names = set(eq_df["event_name"].values)
 evinds_in_df = np.array(
     [i for i in range(len(event_names)) if event_names[i] in df_event_names]
 )
 
-# filter the arrays to only include the events we care about
-print("filtering arrays")
 spectra_mmap = spectra_mmap[evinds_in_df, :]
 noise_mmap = noise_mmap[evinds_in_df, :]
 event_names = event_names[evinds_in_df]
 channel_names = channel_names[evinds_in_df]
 deldist = deldist[evinds_in_df]
-print("done")
 
-# Filter out by channel if specified
+print(f" Done. {len(event_names):,} records retained. ({time.time()-t0:.2f}s)")
+
+# Optionally restrict to a single channel code
 if channel != "":
-    print(f"Filtering by channel: {channel}")
     l0 = len(spectra_mmap)
     channel_codes = np.char.rpartition(channel_names.astype("U"), ".")[:, -1]
     mask = channel_codes == channel
@@ -267,7 +272,8 @@ if channel != "":
     channel_names = channel_names[mask]
     deldist = deldist[mask]
     print(
-        f"Removed {l0-len(spectra_mmap):,} records based on channel. Remaining: {len(spectra_mmap):,} records."
+        f"Filtered to channel {channel}: removed {l0-len(spectra_mmap):,}, "
+        f"{len(spectra_mmap):,} records remain."
     )
 
 # %%
