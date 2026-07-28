@@ -1,6 +1,6 @@
 # California nFI
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632655.svg)](https://doi.org/10.5281/zenodo.21632655)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632654.svg)](https://doi.org/10.5281/zenodo.21632654)
 
 ## Reproducing results
 1) **Download and save the earthquake catalog.** Run `scripts/data_processing/download_eq_catalogs.py`, which does the following:
