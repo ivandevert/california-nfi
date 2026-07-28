@@ -1,0 +1,138 @@
+# =============================================================================
+# config.yaml  --  configuration for data acquisition. Parameters for computing
+#                  nFI are set in the run_nfi.py script.
+#
+# SETUP
+#   1. Copy this file to config.yaml   (cp config.example.yaml config.yaml)
+#   2. Edit the values under `paths:` to match your machine.
+#   3. Change parameters, if desired. The current parameters are those used
+#      in the California nFI paper.
+#
+# NOTES
+#   - `project_dir` and `storage_dir` are the only paths you normally must change: it points at
+#     the (large) volume where waveforms and catalogs live, which differs per
+#     machine. Everything else defaults sensibly.
+#   - Paths may use ~ for your home directory and $VARS for environment
+#     variables; the loader expands both.
+#   - Repo-relative paths (figure_dir, waveforms_temp_dir) are resolved
+#     relative to this config file's location, so they work unchanged on any
+#     clone. Leave them as-is unless you have a reason not to.
+# =============================================================================
+
+paths:
+  # --- External: edit these for your machine ---------------------------------
+  # project_dir is the parent directory of the output files, figures, and results
+  # storage_dir is the same by default, but optionally you can override it here.
+  # Ideally, project_dir would be a fast read/write volume (like an SSD) and 
+  # storage_dir would have plenty of space.
+  project_dir: "path/to/california-nfi/"
+  storage_dir: "path/to/california-nfi/"
+
+  # IMPORTANT: the following lists (project_dir_subdirs, storage_dir_subdirs)
+  # MUST contain catalogs, figures, results, waveforms_temp, and waveforms
+
+  # --- project_dir subdirs: relative to project_dir --------------------------
+  # Sub-paths inside project_dir. Usually you don't need to change these.
+  project_dir_subdirs:
+    - "catalogs"
+    - "figures"
+    - "results"
+    - "waveforms_temp"
+
+  # --- storage_dir subdirs: relative to storage_dir --------------------------
+  # Sub-paths inside storage_dir. Usually you don't need to change these.
+  storage_dir_subdirs:
+    - "waveforms"
+
+  # --- Catalog filenames -----------------------------------------------------
+  # Catalogs are located in the catalogs/ subdirectory.
+  eq_catalog_filename: "event_catalog.csv"
+  station_catalog_filename: "station_catalog.csv"
+  channel_catalog_filename: "channel_catalog.csv"
+
+  # Local nfi.py directory (for testing purposes). Default is "": uses 
+  # installed nfi from py-nfi
+  local_nfi_dir: ""
+
+# =============================================================================
+# Scientific / processing parameters
+# =============================================================================
+shared: &shared
+  # Discard events below mag_range[0]; upper bound is required for some obspy
+  # functions. WARNING: lower bound might be hardcoded in some areas
+  mag_range: [1.0, 9.0]
+  # Exclusive date range for events to download, "YYYY-MM-DD". WARNING: these
+  # might be hardcoded in some of the codes
+  starttime: "1995-01-01"
+  endtime: "2025-01-01"
+  # Keep only stations within this distance of the event (km).
+  max_distance: 100
+  # Time window sliced around each event origin (seconds).
+  pre_event_time: 5
+  post_event_time: 60
+  # Sample rates typical of seismometers; others are discarded.
+  # 0.0 is kept intentionally: some stations misreport 0.0 due to metadata
+  # errors while the underlying data are fine.
+  allowed_sample_rates: [100.0, 200.0, 80.0, 250.0, 500.0, 0.0, 999.0]
+  # Instrument dips accepted (a vertical component must be present).
+  allowed_dips: [0.0, 90.0, -90.0]
+
+download_eq_catalogs:
+  <<: *shared
+
+get_aws_phase:
+  <<: *shared
+
+get_aws_waveforms:
+  <<: *shared
+  # Drop cleaned traces shorter than this (seconds).
+  minimum_trace_length: 30.0
+  # Channel-code prefixes that are not seismometers and are excluded.
+  disallowed_channel_prefixes: ["D", "C"]
+  # Re-attempt events previously marked failed/no_data on a later run.
+  retry_failed_downloads: false
+  # Persist the status file after this many status changes.
+  n_save_status: 100
+
+station_downloads:
+  <<: *shared
+  allowed_units:
+    - "m/s"
+    - "m/s^2"
+
+compute_spectra:
+  <<: *shared
+  
+  # time relative to pick for signal window
+  t_buffer: -0.15
+  # length of desired signal and noise windows (s)
+  t_window_desired: 1.5
+  # desired sampling rate for output spectra
+  sampling_rate: 100.0
+  # P or S: phase to process
+  phase: "P"
+  # components to process (last character in channel code)
+  allowed_components:
+    - "Z"
+  # True: For records without response, simply correct to displacement. False: discard.
+  allow_simple_correct: true
+
+  ## Multitaper parameters
+  # time bandwidth product
+  nw: 3.5
+  # number of tapers
+  kspec: 5
+  # multitaper method: 0=adaptive, 1=unweighted, 2=wt by the eigenvalue of DPSS (see docs)
+  iadapt: 0
+
+  ## Variable time window parameters
+  # shortest time window
+  min_twin: 1.5
+  # longest time window
+  max_twin: 4.5
+  # twin increment
+  d_twin: 0.25
+  # min magnitude for variable time window
+  M_min_twin: 3.5
+  # max magnitude for variable time window
+  M_max_twin: 4.5
