@@ -1,6 +1,6 @@
 # %% [markdown]
 # formerly compspec.ipynb
-# updated to use hdf5 instead of .mspec/
+# Todo: update to use hdf5 instead of .mspec
 
 # %%
 
