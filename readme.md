@@ -1,5 +1,7 @@
 # California nFI
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632655.svg)](https://doi.org/10.5281/zenodo.21632655)
+
 ## Reproducing results
 1) **Download and save the earthquake catalog.** Run `scripts/data_processing/download_eq_catalogs.py`, which does the following:
     - Downloads earthquake catalogs from NCEDC and SCEDC servers and puts in a consistent format
