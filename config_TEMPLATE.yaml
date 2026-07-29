@@ -1,35 +1,36 @@
 # =============================================================================
-# config.yaml  --  configuration for data acquisition. Parameters for computing
-#                  nFI are set in the run_nfi.py script.
+# config.yaml  --  configuration for data acquisition, processing, and storage.
+#                  Parameters for computing nFI are set in the compute_nfi.py 
+#                  script.
 #
 # SETUP
-#   1. Copy this file to config.yaml   (cp config.example.yaml config.yaml)
+#   1. Copy this file to config.yaml in the repo path: 
+#           cp config_TEMPLATE.yaml config.yaml
 #   2. Edit the values under `paths:` to match your machine.
 #   3. Change parameters, if desired. The current parameters are those used
 #      in the California nFI paper.
 #
 # NOTES
-#   - `project_dir` and `storage_dir` are the only paths you normally must change: it points at
-#     the (large) volume where waveforms and catalogs live, which differs per
-#     machine. Everything else defaults sensibly.
-#   - Paths may use ~ for your home directory and $VARS for environment
-#     variables; the loader expands both.
+#   - `project_dir` and `storage_dir` are the only paths you normally must 
+#     change.
 #   - Repo-relative paths (figure_dir, waveforms_temp_dir) are resolved
 #     relative to this config file's location, so they work unchanged on any
 #     clone. Leave them as-is unless you have a reason not to.
+#   - See https://yaml.org/ for information on YAML format.
 # =============================================================================
 
 paths:
   # --- External: edit these for your machine ---------------------------------
   # project_dir is the parent directory of the output files, figures, and results
-  # storage_dir is the same by default, but optionally you can override it here.
+  # storage_dir is the same by default, but optionally you may override it here.
   # Ideally, project_dir would be a fast read/write volume (like an SSD) and 
   # storage_dir would have plenty of space.
   project_dir: "path/to/california-nfi/"
   storage_dir: "path/to/california-nfi/"
 
   # IMPORTANT: the following lists (project_dir_subdirs, storage_dir_subdirs)
-  # MUST contain catalogs, figures, results, waveforms_temp, and waveforms
+  # MUST contain: "catalogs", "figures", "results", "waveforms_temp", and 
+  #   "waveforms"
 
   # --- project_dir subdirs: relative to project_dir --------------------------
   # Sub-paths inside project_dir. Usually you don't need to change these.
