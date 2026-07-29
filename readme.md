@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632654.svg)](https://doi.org/10.5281/zenodo.21632654)
 
-This repository holds the codes (and some of the data) required for reproducing the results of the 2026 California nFI paper (submitted to JGR: Solid Earth). 
+This repository holds the codes (and some of the data) required for reproducing the results of the 2026 California nFI paper (submitted to JGR: Solid Earth). See [py-nfi](https://github.com/ivandevert/py-nfi) for details on the normalized frequency index method and installation.
 
 ## Repository layout
 ```
